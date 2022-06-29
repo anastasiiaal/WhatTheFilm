@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer-sections">
             <div class="footer-section1">
-                <img src="./views/img/logo.svg" alt="logo">
+                <a href="#"><img src="./views/img/logo.svg" alt="logo"></a>
             </div>
 
             <div class="footer-section2">
@@ -21,12 +21,9 @@
                 <a href="#"><img src="./views/img/twitter.svg" alt="twitter"></a>
             </div>
         </div>
+
         <div class="footer-copyright">
             <p>All rights reserved © Study project by Ana & Wawa</p>
         </div>
-        
-
-        
-
     </div>
 </footer>

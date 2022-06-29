@@ -14,7 +14,7 @@
                     </li>
                     <li>
                         <a href=".">Categories</a>
-                        <div class="nav__categories">
+                        <div class="nav__categories dnone">
                             <ul>
                                 <li>
                                     <a class="category-link" href=".">Action</a>
