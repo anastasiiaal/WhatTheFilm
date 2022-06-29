@@ -1,3 +1,69 @@
-// #header {
+#header {
+    background-color: $light-blue;
+    padding: 7px 0;
 
-// }
+    .nav-wrapper {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav {
+        margin-left: -350px;
+        ul > li:nth-child(3) {
+            position: relative;
+
+            .nav__categories {
+                position: absolute;
+                top: 46px;
+                left: -27px;
+                padding: 30px;
+                box-sizing: border-box;
+                background-color: $light-blue;
+
+                a.category-link {
+                    margin: 30px 10px;
+                }
+            }
+        }
+
+        a {
+            color: $white;
+            padding: 10px 15px;
+            margin: 0 5px;
+            transition: $transition;
+            font-size: 14px;
+
+            &:hover {
+                color: $pink;
+            }
+
+            
+        }
+    }
+
+    form {
+        position: relative;
+
+        input {
+            padding: 5px 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            background-color: $dark-blue;
+            border-radius: 2px;
+            border: none;
+            color: $white;
+
+            &:focus {
+                outline: 1px solid $pink;
+            }
+        }
+
+        &:after {
+            content: url("../img/search.svg");
+            position: absolute;
+            top: 6px;
+            right: 10px;
+        }
+    }
+    
+}
