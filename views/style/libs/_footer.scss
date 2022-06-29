@@ -1,0 +1,44 @@
+footer {
+    .container {
+        font-family: Poppins;
+        font-weight: 300;
+        background-color: $light-blue;
+        color: $white;
+        padding: 20px;
+        .footer-sections {
+            display: flex;
+            .footer-section1 {
+                width: 20%;
+                img {
+                    width: 128px;
+                    height: 100px;
+                };
+            }
+            .footer-section2 {
+                width: 60%;
+                nav {
+                    ul {
+                        display: flex;
+                        justify-content: space-around;
+                        li {
+                            a {
+                                text-decoration: none;
+                                color: $white
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            .footer-section3 {
+                width: 20%;
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+        .footer-copyright {
+            text-align: center;
+        }
+    }
+}
+

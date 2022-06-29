@@ -32,8 +32,52 @@ ol, ul {
   list-style: none;
 }
 
-body {
-  background-color: #000;
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.dflex {
+  display: flex;
+}
+
+.dnone {
+  display: none;
+}
+
+footer .container {
+  font-family: Poppins;
+  font-weight: 300;
+  background-color: #3C3E4D;
+  color: #FFFFFF;
+  padding: 20px;
+}
+footer .container .footer-sections {
+  display: flex;
+}
+footer .container .footer-sections .footer-section1 {
+  width: 20%;
+}
+footer .container .footer-sections .footer-section1 img {
+  width: 128px;
   height: 100px;
-  width: 100px;
+}
+footer .container .footer-sections .footer-section2 {
+  width: 60%;
+}
+footer .container .footer-sections .footer-section2 nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+footer .container .footer-sections .footer-section2 nav ul li a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+footer .container .footer-sections .footer-section3 {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+footer .container .footer-copyright {
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */
