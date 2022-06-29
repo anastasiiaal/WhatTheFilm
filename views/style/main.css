@@ -30,4 +30,10 @@ footer, header, hgroup, menu, nav, section {
 
 ol, ul {
   list-style: none;
+}
+
+body {
+  background-color: #000;
+  height: 100px;
+  width: 100px;
 }/*# sourceMappingURL=main.css.map */
