@@ -1,8 +1,9 @@
 footer {
+    background-color: $light-blue;
     .container {
+        margin-top: 500px;
         font-family: Poppins;
         font-weight: 300;
-        background-color: $light-blue;
         color: $white;
         padding: 20px;
         .footer-sections {

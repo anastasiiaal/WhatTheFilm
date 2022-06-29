@@ -14,60 +14,66 @@
                     </li>
                     <li>
                         <a href=".">Categories</a>
-                        <div class="nav__categories">
+                        <div class="nav__categories dflex">
                             <ul>
-                                <li>
-                                    <a class="category-link" href=".">Action</a>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <a class="category-link" href=".">Action</a>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <a class="category-link" href=".">Action</a>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
+                                <li class="category-link">
                                     <a href=".">Action</a>
                                 </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <a href=".">Action</a>
+                                <li class="category-link">
+                                    <a href=".">Adventure</a>
+                                </li>
+                                <li class="category-link">
+                                    <a href=".">Animation</a>
+                                </li>
+                                <li class="category-link">
+                                    <a href=".">Comedy</a>
+                                </li>
+                                <li class="category-link">
+                                    <a href=".">Crime</a>
+                                </li>
+                                <li class="category-link">
+                                    <a href=".">Documentary</a>
+                                </li>
+                                <li class="category-link">
+                                    <a href=".">Drama</a>
+                                </li>
+                                <li class="category-link">
+                                    <a href=".">Family</a>
+                                </li>
+                                <li class="category-link">
+                                    <a href=".">Fantasy</a>
+                                </li>
+                                <li class="category-link">
+                                    <a href=".">History</a>
                                 </li>
                             </ul>
                             <ul>
-                                <li>
-                                    <a href=".">Action</a>
+                            <li class="category-link">
+                                    <a href=".">Horror</a>
                                 </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <a href=".">Action</a>
+                                <li class="category-link">
+                                    <a href=".">Music</a>
                                 </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <a href=".">Action</a>
+                                <li class="category-link">
+                                    <a href=".">Mystery</a>
                                 </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <a href=".">Action</a>
+                                <li class="category-link">
+                                    <a href=".">Romance</a>
                                 </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <a href=".">Action</a>
+                                <li class="category-link">
+                                    <a href=".">Science Fiction</a>
                                 </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <a href=".">Action</a>
+                                <li class="category-link">
+                                    <a href=".">TV Movie</a>
+                                </li>
+                                <li class="category-link">
+                                    <a href=".">Thriller</a>
+                                </li>
+                                <li class="category-link">
+                                    <a href=".">War</a>
+                                </li>
+                                <li class="category-link">
+                                    <a href=".">Western</a>
                                 </li>
                             </ul>
                         </div>

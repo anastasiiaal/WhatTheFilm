@@ -9,20 +9,27 @@
 
     nav {
         margin-left: -350px;
+
         ul > li:nth-child(3) {
             position: relative;
 
             .nav__categories {
                 position: absolute;
-                top: 46px;
+                top: 20px;
                 left: -27px;
-                padding: 30px;
+                padding: 40px 30px 30px 30px;
                 box-sizing: border-box;
                 background-color: $light-blue;
+                display: none;
 
-                a.category-link {
-                    margin: 30px 10px;
+                li.category-link {
+                    margin: 15px 0;
+                    min-width: 200px;
                 }
+            }
+
+            &:hover > .nav__categories {
+                display: flex;
             }
         }
 
@@ -31,7 +38,8 @@
             padding: 10px 15px;
             margin: 0 5px;
             transition: $transition;
-            font-size: 14px;
+            // font-size: 14px;
+            font-size: 1rem;
 
             &:hover {
                 color: $pink;
