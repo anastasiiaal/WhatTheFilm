@@ -8,9 +8,9 @@
             <div class="footer-section2">
                 <nav class="nav-footer">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">New releases</a></li>
-                        <li><a href="#">Categories</a></li>
+                        <li><a href="#" class="txt-lg">Home</a></li>
+                        <li><a href="#" class="txt-lg">New releases</a></li>
+                        <li><a href="#" class="txt-lg">Categories</a></li>
                     </ul>
                 </nav> 
             </div>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="footer-copyright">
-            <p>All rights reserved © Study project by Ana & Wawa</p>
+            <p  class="txt-sm">All rights reserved © Study project by Ana & Wawa</p>
         </div>
     </div>
 </footer>

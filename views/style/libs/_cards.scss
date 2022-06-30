@@ -1,0 +1,44 @@
+.card-movie {
+    margin: 50px; // ligne à supprimer
+    width: 170px;
+    background-color: $light-blue;
+    img {
+        width: 170px;
+        height: 250px;
+    }
+    .card-info {
+        padding: 6px 10px 10px 10px;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        h4:first-child {
+            grid-area: 1 / 1 / 2 / 4;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin-bottom: 5px;
+        }
+        p {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+        h4:last-child {
+            grid-area: 2/ 3/ 3/ 4;
+            text-align: right;
+        }    
+    }
+}
+
+.card-categorie {
+    margin: 50px; // ligne à supprimer
+    position: relative;
+    text-align: center;
+    color: white;
+    h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+    }
+}
