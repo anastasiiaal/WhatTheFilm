@@ -29,16 +29,25 @@
     }
 }
 
+.cards-categorie {
+    margin: 50px; // ligne à supprimer 
+    display: flex;
+}
+
 .card-categorie {
-    margin: 50px; // ligne à supprimer
+    margin-right: 30px;
     position: relative;
     text-align: center;
     color: white;
+    img {
+        filter: brightness(0.8);
+    }
     h2 {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-transform: uppercase;
+        text-shadow: 1px 1px 1px $dark-blue;
     }
 }

@@ -11,9 +11,6 @@ include('views/templates/head.php');
 
 
 
-<?php
-    include('views/templates/card-categorie.php');
-?>
 
 <?php
     include('views/templates/footer.php');

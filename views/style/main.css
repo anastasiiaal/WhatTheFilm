@@ -149,6 +149,10 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
   padding: 10px;
 }
 
+.info-movie p {
+  margin-bottom: 23px;
+}
+
 .separator {
   align-items: center;
   padding: 30px 0;
@@ -317,11 +321,19 @@ footer .container .footer-copyright {
   text-align: right;
 }
 
-.card-categorie {
+.cards-categorie {
   margin: 50px;
+  display: flex;
+}
+
+.card-categorie {
+  margin-right: 30px;
   position: relative;
   text-align: center;
   color: white;
+}
+.card-categorie img {
+  filter: brightness(0.8);
 }
 .card-categorie h2 {
   position: absolute;
@@ -329,6 +341,7 @@ footer .container .footer-copyright {
   left: 50%;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
+  text-shadow: 1px 1px 1px #282A38;
 }
 
 .overlay {
