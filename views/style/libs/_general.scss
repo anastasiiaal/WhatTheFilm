@@ -136,12 +136,13 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
     padding: 30px 0;
     .separator-line:first-child {
         height: 20px;
-        width: 20px;
+        min-width: 20px;
         background-color: rgba($pink, .8);
     }
 
     h2 {
         padding: 0 15px;
+        white-space: nowrap;
     }
 
     .separator-line:last-child {
@@ -149,4 +150,10 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
         width: 100%;
         background-color: rgba($pink, .8);
     }
+}
+
+// others
+
+::selection {
+    background-color: rgba($pink, .3);
 }

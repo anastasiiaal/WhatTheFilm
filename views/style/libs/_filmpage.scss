@@ -1,0 +1,52 @@
+.film-main {
+    padding: 50px 0;
+
+    &>.container {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .film__info-wrapper {
+        // margin-left: 70px;
+        width: 630px;
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .infospan {
+            padding: 0 10px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+
+        .film__genres {
+            margin: 27px 0 30px;
+
+            &> p {
+                margin-right: 20px;
+            }
+        }
+
+        button {
+            margin-top: 50px;
+            z-index: 1;
+
+            &> img {
+                transform: translateY(2px);
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .film__rating {
+        align-items: center;
+        align-self: flex-start;
+
+        &> img {
+            margin-right: 5px;
+        }
+    }
+}
