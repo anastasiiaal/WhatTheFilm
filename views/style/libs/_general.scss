@@ -73,11 +73,23 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
     font-size: 1rem;
     font-weight: 400;
     padding: 5px 12px;
+    transition: $transition;
+
+    &:hover {
+        background-color: rgba($pink, 0.4);
+    }
 }
 
 .menu.selected {
-    background-color: rgba($pink, 0.5);
+    background-color: rgba($pink, 0.6);
     border-radius: 2px;
+}
+
+.rating {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.7em;
+    font-weight: 700;
+    color: $white;
 }
 
 // recurrent elements
@@ -103,5 +115,38 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
         transform: translate(2px, 2px);
         box-shadow: -2px -2px 0 0 rgba($white, 0.8);
         background-color: #e72f57;
+    }
+}
+
+.persona {
+    flex-direction: column;
+    width: 170px;
+    // margin: 15px;
+
+    &__txt-wrapper {
+        box-sizing: border-box;
+        padding: 10px;
+    }
+}
+
+// paragraph separation
+
+.separator {
+    align-items: center;
+    padding: 30px 0;
+    .separator-line:first-child {
+        height: 20px;
+        width: 20px;
+        background-color: rgba($pink, .8);
+    }
+
+    h2 {
+        padding: 0 15px;
+    }
+
+    .separator-line:last-child {
+        height: 20px;
+        width: 100%;
+        background-color: rgba($pink, .8);
     }
 }

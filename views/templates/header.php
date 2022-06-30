@@ -48,7 +48,7 @@
                                 </li>
                             </ul>
                             <ul>
-                            <li class="category-link">
+                                <li class="category-link">
                                     <a href=".">Horror</a>
                                 </li>
                                 <li class="category-link">
