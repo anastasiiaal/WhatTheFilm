@@ -44,7 +44,7 @@ h4 {
     font-weight: 600;
 }
 
-h1, h2, h3, h4, .txt-lg, .txt-reg {
+h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
     color: $white;
 }
 
@@ -72,6 +72,12 @@ h1, h2, h3, h4, .txt-lg, .txt-reg {
 .menu {
     font-size: 1rem;
     font-weight: 400;
+    padding: 5px 12px;
+}
+
+.menu.selected {
+    background-color: rgba($pink, 0.5);
+    border-radius: 2px;
 }
 
 // recurrent elements
