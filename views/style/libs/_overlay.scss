@@ -1,0 +1,41 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    position: fixed;
+
+    .iframe-wrapper {
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+        .iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+
+        #btn_close-modal {
+            position: absolute;
+            top: 60px;
+            right: 80px;
+            transition: $transition;
+            padding: 20px;
+            &>line {
+                transition: $transition;
+            }
+
+            &:hover {
+                transform: scale(1.2);
+                &>line {
+                    stroke: $pink;
+                }
+            }
+        }
+    }
+}

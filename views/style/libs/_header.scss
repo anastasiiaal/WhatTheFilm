@@ -20,6 +20,7 @@
                 padding: 40px 30px 30px 30px;
                 box-sizing: border-box;
                 background-color: $light-blue;
+                border-radius: 0px 0px 3px 3px;
                 display: none;
 
                 li.category-link {
@@ -69,9 +70,8 @@
         &:after {
             content: url("../img/search.svg");
             position: absolute;
-            top: 6px;
+            top: 7px;
             right: 10px;
         }
     }
-    
 }
