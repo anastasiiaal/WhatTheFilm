@@ -35,3 +35,20 @@ if (document.getElementById('categories-list')) {
         })
     });
 }
+
+// burger on mobile version _______________________________________
+const burger = document.getElementById("burger");
+const ulNav = document.getElementById("ul-nav");
+const closeBurger = document.getElementById('close-burger');
+burger.addEventListener('click', () => {
+    ulNav.style.display = "flex";
+    closeBurger.style.display = "flex";
+})
+closeBurger.addEventListener('click', () => {
+    ulNav.style.display = "none";
+    closeBurger.style.display = "none";
+})
+ulNav.addEventListener('click', () => {
+    ulNav.style.display = "none";
+    closeBurger.style.display = "none";
+})

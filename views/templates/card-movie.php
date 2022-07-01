@@ -1,4 +1,4 @@
-<a href="." class="card-movie__link">
+<a href="./film.php" class="card-movie__link">
     <div class="card-movie">
         <img src="./views/img/affiche.jpg" alt="poster">
         <div class="card-info">
