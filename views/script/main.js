@@ -21,17 +21,17 @@ function checkBtnWatch () {
 checkBtnWatch();
 
 
-// function checkOverlay () {
-//     if(document.getElementById('btn_close-modal') && document.getElementById('overlay')) {
-//         const closeTrailer = document.getElementById('btn_close-modal'),
-//               overlayTrailer = document.getElementById('overlay');
-
-//         closeTrailer.addEventListener('click', () => {
-//             overlayTrailer.classList.add('dnone');
-//         })
-//         overlayTrailer.addEventListener('click', () => {
-//             overlayTrailer.classList.add('dnone');
-//         })
-//     }
-// }   
-// checkOverlay();
+// categories selection ______________________________________________
+// on click add styles
+if (document.getElementById('categories-list')) {
+    let categories = document.querySelectorAll('.menu');
+    categories.forEach(category => {
+        category.addEventListener('click', () => {
+            if(!category.classList.contains('selected')) {
+                category.classList.add('selected');
+            } else {
+                category.classList.remove('selected');
+            }
+        })
+    });
+}

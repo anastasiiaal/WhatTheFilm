@@ -1,0 +1,23 @@
+.categories-list {
+    &> .container {
+        justify-content: center;
+        flex-wrap: wrap;
+
+        &> .menu {
+            margin: 5px;
+        }
+    }
+}
+
+.films {
+    flex-direction: column;
+    margin-top: 20px;
+    &>.container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &> button {
+        margin: 60px auto 0;
+    }
+}

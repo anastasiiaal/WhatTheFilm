@@ -13,7 +13,7 @@
                         <a href=".">New releases</a>
                     </li>
                     <li>
-                        <a href=".">Categories</a>
+                        <a href="./categories.php">Categories</a>
                         <div class="nav__categories dflex">
                             <ul>
                                 <li class="category-link">

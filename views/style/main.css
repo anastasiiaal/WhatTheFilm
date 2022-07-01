@@ -70,7 +70,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
@@ -99,6 +99,7 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
   font-size: 1rem;
   font-weight: 400;
   padding: 5px 12px;
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 .menu:hover {
@@ -143,6 +144,10 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
 .persona {
   flex-direction: column;
   width: 170px;
+  margin-right: 30px;
+}
+.persona > img {
+  border-radius: 3px;
 }
 .persona__txt-wrapper {
   box-sizing: border-box;
@@ -181,11 +186,10 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
 }
 
 footer {
-  margin-top: 500px;
   background-color: #3C3E4D;
 }
 footer .container {
-  margin-top: 500px;
+  margin-top: 100px;
   font-family: Poppins;
   font-weight: 300;
   color: #FFFFFF;
@@ -281,8 +285,9 @@ footer .container .footer-copyright {
   position: relative;
 }
 #header form input {
-  padding: 5px 10px;
+  padding: 5px 32px 5px 10px;
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
   font-size: 14px;
   background-color: #282A38;
   border-radius: 2px;
@@ -300,16 +305,23 @@ footer .container .footer-copyright {
 }
 
 .card-movie {
-  margin: 50px;
-  width: 170px;
   background-color: #3C3E4D;
+  border-radius: 3px;
+}
+.card-movie__link {
+  margin: 20px 0;
+  transition: all 0.2s ease-in-out;
+  width: 18%;
+}
+.card-movie__link:hover {
+  transform: scale(1.05);
 }
 .card-movie img {
-  width: 170px;
-  height: 250px;
+  width: 100%;
+  border-radius: 3px 3px 0 0;
 }
 .card-movie .card-info {
-  padding: 6px 10px 10px 10px;
+  padding: 8px 12px 12px 12px;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -431,4 +443,37 @@ footer .container .footer-copyright {
 }
 .film-main .film__rating > img {
   margin-right: 5px;
+}
+
+.cast-crew .separator {
+  margin-bottom: 15px;
+}
+.cast-crew > .container.dflex:last-child {
+  justify-content: space-between;
+}
+.cast-crew .crew__wrapper {
+  margin-bottom: 70px;
+}
+.cast-crew .film-details ul li {
+  margin-bottom: 20px;
+}
+
+.categories-list > .container {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.categories-list > .container > .menu {
+  margin: 5px;
+}
+
+.films {
+  flex-direction: column;
+  margin-top: 20px;
+}
+.films > .container {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.films > button {
+  margin: 60px auto 0;
 }/*# sourceMappingURL=main.css.map */

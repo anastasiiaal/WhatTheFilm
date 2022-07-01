@@ -50,3 +50,21 @@
         }
     }
 }
+
+.cast-crew {
+    .separator {
+        margin-bottom: 15px;
+    }
+
+    &>.container.dflex:last-child {
+        justify-content: space-between;
+    }
+
+    .crew__wrapper {
+        margin-bottom: 70px;
+    }
+
+    .film-details ul li {
+        margin-bottom: 20px;
+    }
+}

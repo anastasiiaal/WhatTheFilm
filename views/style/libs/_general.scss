@@ -40,7 +40,7 @@ h3 {
 }
 
 h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
@@ -73,6 +73,7 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
     font-size: 1rem;
     font-weight: 400;
     padding: 5px 12px;
+    cursor: pointer;
     transition: $transition;
 
     &:hover {
@@ -121,7 +122,11 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
 .persona {
     flex-direction: column;
     width: 170px;
-    // margin: 15px;
+    margin-right: 30px;
+
+    &> img {
+        border-radius: 3px;
+    }
 
     &__txt-wrapper {
         box-sizing: border-box;
