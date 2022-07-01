@@ -181,11 +181,10 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
 }
 
 footer {
-  margin-top: 500px;
   background-color: #3C3E4D;
 }
 footer .container {
-  margin-top: 500px;
+  margin-top: 100px;
   font-family: Poppins;
   font-weight: 300;
   color: #FFFFFF;
@@ -199,7 +198,7 @@ footer .container .footer-sections .footer-section1 {
 }
 footer .container .footer-sections .footer-section1 img {
   width: 128px;
-  height: 100px;
+  height: auto;
 }
 footer .container .footer-sections .footer-section2 {
   width: 60%;
@@ -330,29 +329,6 @@ footer .container .footer-copyright {
   text-align: right;
 }
 
-.cards-categorie {
-  margin: 50px;
-  display: flex;
-}
-
-.card-categorie {
-  margin-right: 30px;
-  position: relative;
-  text-align: center;
-  color: white;
-}
-.card-categorie img {
-  filter: brightness(0.8);
-}
-.card-categorie h2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-transform: uppercase;
-  text-shadow: 1px 1px 1px #282A38;
-}
-
 .overlay {
   position: absolute;
   top: 0;
@@ -431,4 +407,123 @@ footer .container .footer-copyright {
 }
 .film-main .film__rating > img {
   margin-right: 5px;
+}
+
+.slider {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+.slider a {
+  max-width: 170px;
+  margin: 0 15px;
+}
+
+.img-div {
+  width: 170px;
+  height: 120px;
+  position: relative;
+}
+.img-div h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #282A38;
+}
+
+.div1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/action.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/adventure.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/animation.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div4 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/comedy.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div5 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/crime.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div6 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/documentary.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div7 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/drama.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div8 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/family.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div9 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/fantasy.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div10 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/history.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div11 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/horror.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div12 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/music.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div13 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/mystery.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div14 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/romance.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div15 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/sci-fi.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div16 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/tv-movie.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div17 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/thriller.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div18 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/war.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.div19 {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../views/img/categories/western.jpg") center no-repeat;
+  background-size: cover;
 }/*# sourceMappingURL=main.css.map */

@@ -1,8 +1,7 @@
 footer {
-    margin-top: 500px; // ligne à supprimer
     background-color: $light-blue;
     .container {
-        margin-top: 500px;
+        margin-top: 100px;
         font-family: Poppins;
         font-weight: 300;
         color: $white;
@@ -13,7 +12,7 @@ footer {
                 width: 20%;
                 img {
                     width: 128px;
-                    height: 100px;
+                    height: auto;
                 }              
             }
             .footer-section2 {
