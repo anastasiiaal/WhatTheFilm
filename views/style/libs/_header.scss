@@ -22,6 +22,7 @@
                 background-color: $light-blue;
                 border-radius: 0px 0px 3px 3px;
                 display: none;
+                z-index: 10000;
 
                 li.category-link {
                     margin: 15px 0;

@@ -1,25 +1,11 @@
 <?php
-include('views/templates/head.php');
-?>
+require_once 'model/MovieDB.php';    
+require_once '.gitignore/_api.php';
+$movieDB = new MovieDB($API_KEY);
 
-<body>
-<?php
-    include('views/templates/header.php');
-?>
-
-
-<?php
-    include('views/templates/carousel-categories.php');
-?>
-
-<?php
-    include('views/templates/footer.php');
-?>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-3.4.0.js"></script>
-
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>   
-    <script src="views/script/main.js"></script>
-</body>
-</html>
+$getSearchResult = $movieDB->getSearchResult("boy");
+$getMovie = $movieDB->getMovie(122);
+$getGenres = $movieDB->getGenres();
+$getFilmsByGenre = $movieDB->getFilmsByGenre('24,36');
+$getActors = $movieDB->getActors(122);
+$getCrew = $movieDB->getCrew(122);

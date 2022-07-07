@@ -52,42 +52,6 @@ ulNav.addEventListener('click', () => {
     ulNav.style.display = "none";
     closeBurger.style.display = "none";
 })
-//         closeTrailer.addEventListener('click', () => {
-//             overlayTrailer.classList.add('dnone');
-//         })
-//         overlayTrailer.addEventListener('click', () => {
-//             overlayTrailer.classList.add('dnone');
-//         })
-//     }
-// }
-// checkOverlay();
-
 
 // sider categories ___________________________________________________
-// $('.slider').slick({
-//     centerMode: true,
-//     centerPadding: '60px',
-//     slidesToShow: 3,
-//     responsive: [
-//       {
-//         breakpoint: 768,
-//         settings: {
-//           arrows: false,
-//           centerMode: true,
-//           centerPadding: '40px',
-//           slidesToShow: 3
-//         }
-//       },
-//       {
-//         breakpoint: 480,
-//         settings: {
-//           arrows: false,
-//           centerMode: true,
-//           centerPadding: '40px',
-//           slidesToShow: 1
-//         }
-//       }
-//     ]
-//   });
-
 $('.slider').slick()
