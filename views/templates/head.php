@@ -12,15 +12,15 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <link rel="stylesheet" href="./views/style/main.css">
+    <link rel="stylesheet" href="./style/main.css">
     <!-- favicons -->
-        <link rel="icon" type="image/x-icon" href="./views/img/favicons/favicon-32.png" sizes="32x32">
-        <link rel="icon" type="image/x-icon" href="./views/img/favicons/favicon-57.png" sizes="57x57">
-        <link rel="icon" type="image/x-icon" href="./views/img/favicons/favicon-76.png" sizes="76x76">
-        <link rel="icon" type="image/x-icon" href="./views/img/favicons/favicon-96.png" sizes="96x96">
-        <link rel="icon" type="image/x-icon" href="./views/img/favicons/favicon-128.png" sizes="128x128">
-        <link rel="icon" type="image/x-icon" href="./views/img/favicons/favicon-192.png" sizes="192x192">
-        <link rel="icon" type="image/x-icon" href="./views/img/favicons/favicon-228.png" sizes="228x228">
+        <link rel="icon" type="image/x-icon" href="./img/favicons/favicon-32.png" sizes="32x32">
+        <link rel="icon" type="image/x-icon" href="./img/favicons/favicon-57.png" sizes="57x57">
+        <link rel="icon" type="image/x-icon" href="./img/favicons/favicon-76.png" sizes="76x76">
+        <link rel="icon" type="image/x-icon" href="./img/favicons/favicon-96.png" sizes="96x96">
+        <link rel="icon" type="image/x-icon" href="./img/favicons/favicon-128.png" sizes="128x128">
+        <link rel="icon" type="image/x-icon" href="./img/favicons/favicon-192.png" sizes="192x192">
+        <link rel="icon" type="image/x-icon" href="./img/favicons/favicon-228.png" sizes="228x228">
     <!-- end favicons -->
     <title>WTF | What The Film</title>
 </head>

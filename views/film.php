@@ -1,14 +1,14 @@
 <?php
-include('views/templates/head.php');
+include('templates/head.php');
 ?>
 <body>
 <?php
-    include('views/templates/header.php');
-    include('views/templates/trailer-overlay.php');
+    include('templates/header.php');
+    include('templates/trailer-overlay.php');
 ?>
 <section class="film-main">
     <div class="container dflex">
-        <img src="views/img/affiche.jpg" alt="Poster">
+        <img src="img/affiche.jpg" alt="Poster">
         <div class="film__info-wrapper">
             <h1>Title of the movie </h1>
             <p class="txt-sm"><span class="infospan infospan-year">2011</span> | <span class="infospan infospan-runtime">1h55</span> | <span class="infospan infospan-country">USA, England</span></p>
@@ -21,31 +21,31 @@ include('views/templates/head.php');
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida venenatis sed molestie orci risus. Porta nulla etiam tristique id tristique pretium. Malesuada vehicula sagittis, nunc quam lacus in. Sit arcu ut ultrices proin bibendum interdum rutrum congue.
                 Porta nulla etiam tristique id tristique pretium. Malesuada vehicula sagittis, nunc quam lacus in. Sit arcu ut ultrices proin bibendum.
             </p>
-            <button id="btn-watch" class="btn-primary"> <img src="views/img/triangle.svg" alt="Watch"> Watch trailer</button>
+            <button id="btn-watch" class="btn-primary"> <img src="img/triangle.svg" alt="Watch"> Watch trailer</button>
         </div>
         <div class="film__rating dflex">
-            <img src="views/img/star.svg" alt="Star">
+            <img src="img/star.svg" alt="Star">
             <p class="rating"><span>7.2</span> / 10</p>
         </div>
     </div>
 </section>
 <section id="cast-crew" class="cast-crew">
     <?php
-    include('views/templates/separator.php');
+    include('templates/separator.php');
     ?>
     <div class="container dflex">
         <div class="cast-crew__wrapper">
             <div class="crew__wrapper dflex">
                 <?php 
                     for($i = 0; $i <= 3; $i++) {
-                        include('views/templates/persona.php');
+                        include('templates/persona.php');
                     }
                 ?>
             </div>
             <div class="cast__wrapper dflex">
                 <?php 
                     for($i = 0; $i <= 3; $i++) {
-                        include('views/templates/persona.php');
+                        include('templates/persona.php');
                     }
                 ?>
             </div>
@@ -96,8 +96,8 @@ include('views/templates/head.php');
 
 
 <?php
-    include('views/templates/footer.php');
+    include('templates/footer.php');
 ?>
-    <script src="views/script/main.js"></script>
+    <script src="script/main.js"></script>
 </body>
 </html>

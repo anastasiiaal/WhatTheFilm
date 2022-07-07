@@ -44,10 +44,15 @@ burger.addEventListener('click', () => {
     ulNav.style.display = "flex";
     closeBurger.style.display = "flex";
 })
+
 closeBurger.addEventListener('click', () => {
-    ulNav.style.display = "none";
-    closeBurger.style.display = "none";
+    // if (window.matchMedia("(max-width: 600px)").matches) {
+        ulNav.style.display = "none";
+        closeBurger.style.display = "none";
+    // } 
 })
+
+
 ulNav.addEventListener('click', () => {
     ulNav.style.display = "none";
     closeBurger.style.display = "none";

@@ -1,6 +1,6 @@
 <a href="./film.php" class="card-movie__link">
     <div class="card-movie">
-        <img src="./views/img/affiche.jpg" alt="poster">
+        <img src="./img/affiche.jpg" alt="poster">
         <div class="card-info">
             <h4>Title Title Title Title Title</h4>
             <p class="txt-sm">2022</p>
