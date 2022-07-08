@@ -148,6 +148,9 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
 }
 .persona > img {
   border-radius: 3px;
+  height: 170px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .persona__txt-wrapper {
   box-sizing: border-box;
