@@ -20,6 +20,18 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
+        h4 {
+            &.green {
+                color: $n-green;
+            }
+            &.orange {
+                color: $n-orange;
+            }
+            &.red {
+                color: $n-red;
+            }
+
+        }
         h4:first-child {
             grid-area: 1 / 1 / 2 / 4;
             overflow: hidden;

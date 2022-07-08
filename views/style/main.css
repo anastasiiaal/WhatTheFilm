@@ -348,6 +348,15 @@ footer .container .footer-copyright {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
+.card-movie .card-info h4.green {
+  color: #78FF78;
+}
+.card-movie .card-info h4.orange {
+  color: #FFA41B;
+}
+.card-movie .card-info h4.red {
+  color: #FF3E3E;
+}
 .card-movie .card-info h4:first-child {
   grid-area: 1/1/2/4;
   overflow: hidden;
