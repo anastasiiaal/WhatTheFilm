@@ -50,7 +50,7 @@ $columnSize = intdiv(sizeof($getGenres), 2) + 1;
                 </div>
             </nav>
             <form id="form" action="./search.php" method="get">
-                <input type="text" placeholder="Search" id="search" class="search" name="search">
+                <input type="text" placeholder="Search" id="search" class="search" name="search" pattern="[a-zA-Z0-9- ?!+',.:]{2,25}" title="2 to 25 letters or numbers" required>
             </form>
         </div>
     </div>

@@ -7,18 +7,18 @@ include('templates/head.php');
     include('templates/separator.php');
 ?>
 <?php
-    // $getFilmsByGenre = $movieDB->getFilmsByGenre('');
-    
-?>
-<?php
     $searchQuery = "";
     $getSearchResult = [];
     if(isset($_GET["search"])) {
-        $searchQuery = $_GET["search"];
-        $searchQuery = $new = str_replace(' ', '%20', $searchQuery);   // replaces whitespace with %20 symbol to let it be inserted in a URL
-        $getSearchResult = $movieDB->getSearchResult($searchQuery);
+        if ($_GET["search"] === "" || $_GET["search"] === "  " || $_GET["search"] === "   ") {
+            echo "<h2 style='display: inline-block; margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"; 
+        } else {
+            $searchQuery = $_GET["search"];
+            $searchQuery = $new = str_replace(' ', '%20', $searchQuery);   // replaces whitespace with %20 symbol to let it be inserted in a URL
+            $getSearchResult = $movieDB->getSearchResult($searchQuery);
+        }
     } else {
-        echo "<h1> NOPE </h1>"; 
+        echo "<h2 style='margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"; 
     }
 ?>
 <section class="films dflex">
@@ -37,7 +37,7 @@ include('templates/head.php');
                 </a>
             <?php } ?>
         <?php } else { ?>
-            <?= "<h2> Sorry no result </h2>"   ?>
+            <?= "<h2 style='margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"   ?>
         <?php } ?>
     </div>
     <button class="btn-primary">See more films</button>

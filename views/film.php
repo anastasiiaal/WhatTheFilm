@@ -5,7 +5,7 @@ include('templates/head.php');
 <?php
     include('templates/header.php');
     include('templates/trailer-overlay.php');
-    $getMovie = $movieDB->getMovie(496450);
+    $getMovie = $movieDB->getMovie(122);
     $getCrew = $movieDB->getCrew(122);
 ?>
 <section class="film-main">

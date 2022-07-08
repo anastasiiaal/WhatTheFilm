@@ -10,8 +10,15 @@ include('templates/head.php');
 <?php
     $getGenres = $movieDB->getGenres();
     $selectedGenres = [];
-
-    $getFilmsByGenre = $movieDB->getFilmsByGenre('');
+    $genresToUrl = "";
+    
+    if (isset($_GET['idgenre'])) {
+        array_push($selectedGenres, $_GET['idgenre']);
+        // var_dump($selectedGenres);
+        $genresToUrl = implode(",", $selectedGenres);
+        // var_dump($genresToUrl);
+    }
+$getFilmsByGenre = $movieDB->getFilmsByGenre($genresToUrl);
 ?>
 <section class="categories-list" id="categories-list">
     <div class="container dflex">

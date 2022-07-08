@@ -46,17 +46,16 @@ burger.addEventListener('click', () => {
 })
 
 closeBurger.addEventListener('click', () => {
-    // if (window.matchMedia("(max-width: 600px)").matches) {
         ulNav.style.display = "none";
         closeBurger.style.display = "none";
-    // } 
 })
 
-
-ulNav.addEventListener('click', () => {
-    ulNav.style.display = "none";
-    closeBurger.style.display = "none";
-})
+if (window.matchMedia("(max-width: 600px)").matches) {
+    ulNav.addEventListener('click', () => {
+        ulNav.style.display = "none";
+        closeBurger.style.display = "none";
+    })
+} 
 
 // sider categories ___________________________________________________
 $('.slider').slick()

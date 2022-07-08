@@ -16,8 +16,8 @@ class MovieDB {
 
         $data = $this->callAPI("search/movie?{$this->API}&query={$searchInput}");
 
-        if ($data === null) {
-            $results = [];
+        if ($data['results'] === []) {
+            $results = null;
         } else {
             foreach($data['results'] as $result) {
                 $results[] = [
@@ -29,7 +29,6 @@ class MovieDB {
                 ];
             }
         }
-
         
         return $results;
 
@@ -165,6 +164,13 @@ class MovieDB {
         return $resultsCr;
 
     }
+
+    // // pagination function
+    // public function getPage (string $url) {
+    //     $data = $this->callAPI("{$url}&page=");
+
+    //     return $data;
+    // }
 
 
     // ______________ méthodes privées - à la fin
