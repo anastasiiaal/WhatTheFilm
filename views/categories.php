@@ -11,7 +11,7 @@ include('templates/head.php');
     $getGenres = $movieDB->getGenres();
     $selectedGenres = [];
 
-    $getFilmsByGenre = $movieDB->getFilmsByGenre('36,27');
+    $getFilmsByGenre = $movieDB->getFilmsByGenre('');
 ?>
 <section class="categories-list" id="categories-list">
     <div class="container dflex">

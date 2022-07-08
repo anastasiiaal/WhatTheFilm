@@ -1,3 +1,7 @@
+<?php
+$getGenres = $movieDB->getGenres();
+$columnSize = intdiv(sizeof($getGenres), 2) + 1;
+?>
 <header class="header" id="header">
     <div class="container">
         <div class="nav-wrapper dflex">
@@ -16,65 +20,19 @@
                         <a href="./categories.php">Categories</a>
                         <div class="nav__categories dflex">
                             <ul>
+                                <?php for ($i = 0; $i < $columnSize; $i++) { ?>
                                 <li class="category-link">
-                                    <a href=".">Action</a>
+                                    <a href="./categories.php?idgenre=<?= $getGenres[$i]['id'] ?>" id="<?= $getGenres[$i]['id'] ?>"><?= $getGenres[$i]['name'] ?></a>
                                 </li>
-                                <li class="category-link">
-                                    <a href=".">Adventure</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">Animation</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">Comedy</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">Crime</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">Documentary</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">Drama</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">Family</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">Fantasy</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">History</a>
-                                </li>
+                                <?php } ?>
                             </ul>
                             <ul>
+                                <?php for ($i = $columnSize; $i < sizeof($getGenres); $i++) { ?>
                                 <li class="category-link">
-                                    <a href=".">Horror</a>
+                                    <a href="./categories.php?idgenre=<?= $getGenres[$i]['id'] ?>" id="<?= $getGenres[$i]['id'] ?>"><?= $getGenres[$i]['name'] ?></a>
                                 </li>
-                                <li class="category-link">
-                                    <a href=".">Music</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">Mystery</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">Romance</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">Science Fiction</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">TV Movie</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">Thriller</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">War</a>
-                                </li>
-                                <li class="category-link">
-                                    <a href=".">Western</a>
-                                </li>
+                                <?php } ?>
+                                
                             </ul>
                         </div>
                     </li>
@@ -91,8 +49,8 @@
                     </svg>
                 </div>
             </nav>
-            <form id="form">
-                <input type="text" placeholder="Search" id="search" class="search">
+            <form id="form" action="./search.php" method="get">
+                <input type="text" placeholder="Search" id="search" class="search" name="search">
             </form>
         </div>
     </div>
