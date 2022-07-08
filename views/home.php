@@ -8,6 +8,7 @@ include('templates/head.php');
 ?>
 
 
+
 <?php
     include('templates/carousel-categories.php');
 ?>

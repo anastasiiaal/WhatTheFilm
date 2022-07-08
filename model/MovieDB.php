@@ -31,7 +31,7 @@ class MovieDB {
 
     // function to get a movie by an ID get request
     public function getMovie (int $movieID): ?array {
-        $data = $this->callAPI("movie/{$movieID}?{$this->API}&language=en-US");
+        $data = $this->callAPI("movie/{$movieID}?{$this->API}&language=en-US&append_to_response=videos");
 
         $results = [
             'id' => $data['id'],
@@ -44,7 +44,7 @@ class MovieDB {
             'production_countries' => $data['production_countries'],
             'genres' => $data['genres'],
             'overview' => $data['overview'],
-            'videos' => 'https://www.youtube.com/embed/' . $data['videos']['results'][0]['key'],
+            'videos' => 'https://www.youtube.com/embed/' . ($data['videos']['results']? $data['videos']['results'][0]['key']: null),
             'original_title' => $data['original_title'],
             'original_language' => Locale::getDisplayLanguage($data['original_language'] , 'en'),
             'budget' => $data['budget'],
@@ -68,13 +68,13 @@ class MovieDB {
 
         // format budget
         if($results['budget'] >1000000000){
-            $results['budget'] = round(($results['budget']/1000000000),1).' billion';
+            $results['budget'] = '$'. round(($results['budget']/1000000000),1).' B';
         }  
         else if($results['budget']>1000000) {
-            $results['budget'] = round(($results['budget']/1000000),1).' million'; 
+            $results['budget'] = '$'. round(($results['budget']/1000000),1).' M'; 
         } 
         else if($results['budget']>1000) {
-            $results['budget'] = round(($results['budget']/1000),1).' thousand';
+            $results['budget'] = '$'. round(($results['budget']/1000),1).' K';
         } 
         else if($results['budget']===0) {
             $results['budget'] = "-";  
@@ -82,13 +82,13 @@ class MovieDB {
 
         // format revenue
         if($results['revenue'] >1000000000){
-            $results['revenue'] = round(($results['revenue']/1000000000),1).' billion';
+            $results['revenue'] = '$'. round(($results['revenue']/1000000000),1).' B';
         }  
         else if($results['revenue']>1000000) {
-            $results['revenue'] = round(($results['revenue']/1000000),1).' million'; 
+            $results['revenue'] = '$'. round(($results['revenue']/1000000),1).' M'; 
         } 
         else if($results['revenue']>1000) {
-            $results['revenue'] = round(($results['revenue']/1000),1).' thousand';
+            $results['revenue'] = '$'. round(($results['revenue']/1000),1).' K';
         } 
         else if($results['revenue']===0) {
             $results['revenue'] = "-";  

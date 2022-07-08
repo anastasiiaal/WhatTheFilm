@@ -5,11 +5,12 @@ include('templates/head.php');
 <?php
     include('templates/header.php');
     include('templates/separator.php');
+    $getGenres = $movieDB->getGenres();
 ?>
 <section class="categories-list" id="categories-list">
     <div class="container dflex">
-        <?php for ($i = 0; $i < 20; $i++) { ?>
-        <p class="menu">Action</p>
+        <?php foreach($getGenres as $genre) { ?>
+        <p class="menu" id="<?= $genre['id'] ?>"><?= $genre['name'] ?></p>
         <?php } ?>
     </div>
 </section>
