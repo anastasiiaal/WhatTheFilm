@@ -16,22 +16,28 @@ class MovieDB {
 
         $data = $this->callAPI("search/movie?{$this->API}&query={$searchInput}");
 
-        foreach($data['results'] as $result) {
-            $results[] = [
-                'id' => $result['id'],
-                'title' => $result['title'],
-                'poster_path' => 'https://image.tmdb.org/t/p/w500' . $result['poster_path'],
-                'year' => date_format(new DateTime($result['release_date']),"Y"),
-                'vote_average' => $result['vote_average']
-            ];
+        if ($data === null) {
+            $results = [];
+        } else {
+            foreach($data['results'] as $result) {
+                $results[] = [
+                    'id' => $result['id'],
+                    'title' => $result['title'],
+                    'poster_path' => 'https://image.tmdb.org/t/p/w500' . $result['poster_path'],
+                    'year' => date_format(new DateTime($result['release_date'] ?? null),"Y"),
+                    'vote_average' => $result['vote_average']
+                ];
+            }
         }
+
+        
         return $results;
 
     }
 
     // function to get a movie by an ID get request
     public function getMovie (int $movieID): ?array {
-        $data = $this->callAPI("movie/{$movieID}?{$this->API}&language=en-US");
+        $data = $this->callAPI("movie/{$movieID}?{$this->API}&language=en-US&append_to_response=videos");
 
         $results = [
             'id' => $data['id'],
