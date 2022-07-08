@@ -5,27 +5,30 @@ include('templates/head.php');
 <?php
     include('templates/header.php');
     include('templates/trailer-overlay.php');
+    $getMovie = $movieDB->getMovie(496450);
+    $getCrew = $movieDB->getCrew(122);
 ?>
 <section class="film-main">
     <div class="container dflex">
-        <img src="img/affiche.jpg" alt="Poster">
+        <img src="<?=$getMovie['poster_path'] ?>" alt="Poster" style="width: 300px; heigth: 450px">
         <div class="film__info-wrapper">
-            <h1>Title of the movie </h1>
-            <p class="txt-sm"><span class="infospan infospan-year">2011</span> | <span class="infospan infospan-runtime">1h55</span> | <span class="infospan infospan-country">USA, England</span></p>
+            <h1><?= $getMovie['title'] ?></h1>
+            <p class="txt-sm"><span class="infospan infospan-year"><?= $getMovie['year'] ?></span> | <span class="infospan infospan-runtime"><?= $getMovie['runtime'] ?></span> | <span class="infospan infospan-country"><?= $getMovie['production_countries'] ?></span></p>
             <div class="film__genres dflex">
-                <p class="menu selected">Adventure</p>
-                <p class="menu selected">Animation</p>
-                <p class="menu selected">Comedy</p>
+                <?php
+                    foreach(explode(",", $getMovie['genres']) as $genre){
+                        echo "<p class='menu selected'>$genre</p>";
+                    }
+                ?>
             </div>
             <p class="txt-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida venenatis sed molestie orci risus. Porta nulla etiam tristique id tristique pretium. Malesuada vehicula sagittis, nunc quam lacus in. Sit arcu ut ultrices proin bibendum interdum rutrum congue.
-                Porta nulla etiam tristique id tristique pretium. Malesuada vehicula sagittis, nunc quam lacus in. Sit arcu ut ultrices proin bibendum.
+                <?= $getMovie['overview'] ?>
             </p>
             <button id="btn-watch" class="btn-primary"> <img src="img/triangle.svg" alt="Watch"> Watch trailer</button>
         </div>
         <div class="film__rating dflex">
             <img src="img/star.svg" alt="Star">
-            <p class="rating"><span>7.2</span> / 10</p>
+            <p class="rating"><span><?= $getMovie['vote_average'] ?></span> / 10</p>
         </div>
     </div>
 </section>
@@ -54,39 +57,46 @@ include('templates/head.php');
             <ul>
                 <li>
                     <h4>Original title</h4>
-                    <p class="txt-reg">Original and longer name of the film</p>
+                    <p class="txt-reg"><?= $getMovie['original_title'] ?></p>
                 </li>
                 <li>
                     <h4>Release Date</h4>
-                    <p class="txt-reg">April, 2022 </p>
+                    <p class="txt-reg"><?= $getMovie['full_date'] ?></p>
                 </li>
                 <li>
                     <h4>Genre</h4>
-                    <p class="txt-reg">Comedy, Animation</p>
+                    <p class="txt-reg"><?= $getMovie['genres'] ?></p>
                 </li>
                 <li>
                     <h4>Original Language</h4>
-                    <p class="txt-reg">English</p>
+                    <p class="txt-reg"><?= $getMovie['original_language'] ?></p>
                 </li>
                 <li>
                     <h4>Director</h4>
-                    <p class="txt-reg">Dean Fleischer-Camp</p>
+                    <?php
+                    for($i=0; $i<count($getCrew); $i++) {
+                        if($getCrew[$i]['job'] === 'Director') {
+                            $director = $getCrew[$i]['name'];
+                        }
+                    }
+                    ?>
+                    <p class="txt-reg"><?= $director ?></p>
                 </li>
                 <li>
                     <h4>Country of origin</h4>
-                    <p class="txt-reg">USA, UK, France</p>
+                    <p class="txt-reg"><?= $getMovie['production_countries'] ?></p>
                 </li>
                 <li>
                     <h4>Runtime</h4>
-                    <p class="txt-reg">1h 29m</p>
+                    <p class="txt-reg"><?= $getMovie['runtime'] ?></p>
                 </li>
                 <li>
                     <h4>Budget</h4>
-                    <p class="txt-reg">1.3 M</p>
+                    <p class="txt-reg"><?= $getMovie['budget'] ?></p>
                 </li>
                 <li>
                     <h4>Revenue</h4>
-                    <p class="txt-reg">2.5 M</p>
+                    <p class="txt-reg"><?= $getMovie['revenue'] ?></p>
                 </li>
             </ul>
         </div>

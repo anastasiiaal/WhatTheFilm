@@ -5,6 +5,7 @@ include('templates/head.php');
 <?php
     include('templates/header.php');
     include('templates/separator.php');
+    $getGenres = $movieDB->getGenres();
 ?>
 <?php
     $getGenres = $movieDB->getGenres();
