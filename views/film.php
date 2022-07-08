@@ -3,10 +3,13 @@ include('templates/head.php');
 ?>
 <body>
 <?php
+    if(isset($_GET["id"])) {
+        $getMovie = $movieDB->getMovie(intval($_GET["id"]));
+        $getCrew = $movieDB->getCrew(intval($_GET["id"]));
+        $getActors = $movieDB->getActors(intval($_GET["id"]));
+    }
     include('templates/header.php');
     include('templates/trailer-overlay.php');
-    $getMovie = $movieDB->getMovie(122);
-    $getCrew = $movieDB->getCrew(122);
 ?>
 <section class="film-main">
     <div class="container dflex">
@@ -40,17 +43,28 @@ include('templates/head.php');
         <div class="cast-crew__wrapper">
             <div class="crew__wrapper dflex">
                 <?php 
-                    for($i = 0; $i <= 3; $i++) {
-                        include('templates/persona.php');
-                    }
-                ?>
+                    for($i = 0; $i <= 3; $i++) { ?>
+                        <div class="persona dflex">
+                            <img src="<?= $getActors[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './img/poster.png' :$getActors[$i]['profile_path'] ?>" alt="persona">
+                            <div class="persona__txt-wrapper">
+                                <h4><?= $getActors[$i]['name'] ?></h4>
+                                <p class="txt-sm"><?= $getActors[$i]['character'] ?></p>
+                            </div>
+                        </div>
+                    <?php } ?>
+               
             </div>
             <div class="cast__wrapper dflex">
                 <?php 
-                    for($i = 0; $i <= 3; $i++) {
-                        include('templates/persona.php');
-                    }
-                ?>
+                    for($i = 0; $i <= 3; $i++) { ?>
+                        <div class="persona dflex">
+                            <img src="<?= $getCrew[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './img/poster.png' :$getCrew[$i]['profile_path'] ?>" alt="persona">
+                            <div class="persona__txt-wrapper">
+                                <h4><?= $getCrew[$i]['name'] ?></h4>
+                                <p class="txt-sm"><?= $getCrew[$i]['job'] ?></p>
+                            </div>
+                        </div>
+                    <?php } ?>
             </div>
         </div>
         <div class="film-details">
