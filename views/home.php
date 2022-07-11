@@ -20,5 +20,6 @@ include('templates/head.php');
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>   
     <script src="script/main.js"></script>
+    <script src="script/carousel.js"></script>
 </body>
 </html>
