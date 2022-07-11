@@ -605,7 +605,7 @@ footer .container .footer-copyright {
   }
 }
 .slider {
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
   margin-top: 200px;
 }
@@ -615,9 +615,10 @@ footer .container .footer-copyright {
 }
 
 .img-div {
-  width: 170px;
-  height: 120px;
   position: relative;
+}
+.img-div img {
+  filter: brightness(0.8);
 }
 .img-div h2 {
   position: absolute;
@@ -625,100 +626,6 @@ footer .container .footer-copyright {
   left: 50%;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
+  text-align: center;
   text-shadow: 1px 1px 1px #282A38;
-}
-
-.div1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/action.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/adventure.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div3 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/animation.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div4 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/comedy.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div5 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/crime.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div6 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/documentary.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div7 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/drama.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div8 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/family.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div9 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/fantasy.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div10 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/history.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div11 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/horror.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div12 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/music.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div13 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/mystery.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div14 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/romance.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div15 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/sci-fi.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div16 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/tv-movie.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div17 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/thriller.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div18 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/war.jpg") center no-repeat;
-  background-size: cover;
-}
-
-.div19 {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../views/img/categories/western.jpg") center no-repeat;
-  background-size: cover;
 }/*# sourceMappingURL=main.css.map */
