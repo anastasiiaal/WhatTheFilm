@@ -422,6 +422,11 @@ footer .container .footer-copyright {
   align-items: center;
   justify-content: space-between;
 }
+.film-main > .container > img {
+  border-radius: 2px;
+  width: 300px;
+  height: 450px;
+}
 .film-main .film__info-wrapper {
   width: 630px;
 }
@@ -435,10 +440,12 @@ footer .container .footer-copyright {
   padding-left: 0;
 }
 .film-main .film__info-wrapper .film__genres {
-  margin: 27px 0 30px;
+  flex-wrap: wrap;
+  margin: 17px 0 30px;
 }
 .film-main .film__info-wrapper .film__genres > p {
   margin-right: 20px;
+  margin-top: 10px;
   cursor: default;
 }
 .film-main .film__info-wrapper button {
@@ -500,6 +507,37 @@ footer .container .footer-copyright {
   #header nav {
     margin-left: -145px;
   }
+
+  .film-main > .container {
+    position: relative;
+    align-items: start;
+    padding-top: 30px;
+  }
+  .film-main .film__info-wrapper {
+    width: 60%;
+  }
+  .film-main .film__rating {
+    position: absolute;
+    right: 10px;
+    top: -20px;
+  }
+
+  .cast-crew > .container:nth-child(2) {
+    flex-direction: column;
+  }
+  .cast-crew .cast__wrapper, .cast-crew .crew__wrapper {
+    justify-content: space-between;
+  }
+  .cast-crew .film-details ul {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .cast-crew .film-details ul li {
+    width: 22%;
+    padding-top: 30px;
+  }
 }
 /*768-992*/
 @media screen and (max-width: 992px) {
@@ -516,6 +554,15 @@ footer .container .footer-copyright {
 
   a.card-movie__link {
     width: 22%;
+  }
+
+  .film-main > .container > img.poster-img {
+    width: 35%;
+    height: auto;
+  }
+
+  .iframe-wrapper iframe {
+    width: 50%;
   }
 }
 /*600-768*/
@@ -543,6 +590,32 @@ footer .container .footer-copyright {
 
   a.card-movie__link {
     width: 47%;
+  }
+
+  .film-main > .container {
+    flex-direction: column-reverse;
+  }
+  .film-main > .container img.poster-img {
+    width: 55%;
+    margin-top: 50px;
+  }
+  .film-main .film__info-wrapper {
+    width: 100%;
+  }
+
+  .cast-crew .cast__wrapper, .cast-crew .crew__wrapper {
+    flex-wrap: wrap;
+  }
+  .cast-crew .cast__wrapper .persona, .cast-crew .crew__wrapper .persona {
+    margin-right: 0;
+    width: 47%;
+  }
+  .cast-crew .cast__wrapper .persona > img, .cast-crew .crew__wrapper .persona > img {
+    width: 100%;
+    height: 250px;
+  }
+  .cast-crew .film-details ul li {
+    width: 48%;
   }
 }
 /*320-600*/

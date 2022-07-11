@@ -13,7 +13,7 @@ include('templates/head.php');
 ?>
 <section class="film-main">
     <div class="container dflex">
-        <img src="<?=$getMovie['poster_path'] ?>" alt="Poster" style="width: 300px; heigth: 450px">
+        <img class="poster-img" src="<?=$getMovie['poster_path'] ?>" alt="Poster '<?= $getMovie['title'] ?>'">
         <div class="film__info-wrapper">
             <h1><?= $getMovie['title'] ?></h1>
             <p class="txt-sm"><span class="infospan infospan-year"><?= $getMovie['year'] ?></span> | <span class="infospan infospan-runtime"><?= $getMovie['runtime'] ?></span> | <span class="infospan infospan-country"><?= $getMovie['production_countries'] ?></span></p>

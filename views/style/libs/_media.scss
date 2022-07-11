@@ -14,6 +14,50 @@
 
     // page categories
 
+
+    // page film
+    .film-main {
+        &> .container {
+            position: relative;
+            align-items: start;
+            padding-top: 30px;
+        }
+
+        .film__info-wrapper {
+            width: 60%;
+        }
+
+        .film__rating {
+            position: absolute;
+            right: 10px;
+            top: -20px;
+        }
+    }
+
+    .cast-crew {
+        &> .container:nth-child(2) {
+            flex-direction: column;
+        }
+
+        .cast__wrapper, .crew__wrapper {
+            justify-content: space-between;
+        }
+
+        .film-details {
+            ul {
+                margin-top: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                li {
+                    width: 22%;
+                    padding-top: 30px;
+                }
+            }
+        }
+    }
+
 }
 // ____________________________________________________________________
 /*768-992*/
@@ -36,6 +80,21 @@
     // card-movie
     a.card-movie__link {
         width: 22%;
+    }
+
+    // film page
+    .film-main {
+        &> .container > img.poster-img {
+            width: 35%;
+            height: auto;
+        }
+    }
+
+    .iframe-wrapper {
+        iframe {
+            width: 50%;
+        }
+        
     }
 }
 // ____________________________________________________________________
@@ -79,6 +138,44 @@
     // card-movie
     a.card-movie__link {
         width: 47%;
+    }
+
+    // filmpage
+    .film-main {
+        &>.container {
+            flex-direction: column-reverse;
+
+            img.poster-img {
+                width: 55%;
+                margin-top: 50px;
+                // align-self: center;
+            }
+        }
+
+        .film__info-wrapper {
+            width: 100%;
+        }
+    }
+    .cast-crew {
+        .cast__wrapper, .crew__wrapper {
+            flex-wrap: wrap;
+
+            .persona {
+                margin-right: 0;
+                width: 47%;
+                
+                &> img {
+                    width: 100%;
+                    height: 250px;
+                }
+            }
+        }
+    
+        .film-details {
+            ul li {
+                width: 48%;
+            }
+        }
     }
 }
 // ____________________________________________________________________
