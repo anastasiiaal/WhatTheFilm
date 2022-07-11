@@ -1,11 +1,11 @@
 $('.slider').slick({
         slidesToShow: 6,
         slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
+        // autoplay: true,
+        // autoplaySpeed: 2000,
         responsive: [
           {
-            breakpoint: 1200,
+            breakpoint: 1250,
             settings: {
                 slidesToShow: 4,
                 slidesToScroll: 1

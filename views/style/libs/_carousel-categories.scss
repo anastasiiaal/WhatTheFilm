@@ -1,5 +1,5 @@
 .slider {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 200px; // ligne à supprimer
     a {
@@ -12,6 +12,7 @@
     position: relative;
     img {
         filter: brightness(0.8);
+        margin: 0 auto;
     }
     h2 {
         position: absolute;

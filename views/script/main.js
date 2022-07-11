@@ -39,6 +39,11 @@ if (document.getElementById('categories-list')) {
                 let index = idsArr.indexOf(category.dataset.id);
                 idsArr.splice(index, 1);
             }
+            let genresIds = new FormData(getIds)
+            fetch("./categories.php", {
+                method: "POST",
+                body: genresIds,
+            })
             // getIds.innerHTML = idsArr.join(',');
             // getIds.dataset.id = "<?php $meaning = strval('" + idsArr.join(',') + "')?>";
             // getIds.dataset.id = "<?php $meaning = '" + idsArr.join(',') + "'; ?>";
