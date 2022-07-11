@@ -23,15 +23,25 @@ checkBtnWatch();
 
 // categories selection ______________________________________________
 // on click add styles
+let getIds = document.getElementById('getId');
+let idsArr = [];
+let originalLink = document.URL;
+let res = "success";
 if (document.getElementById('categories-list')) {
     let categories = document.querySelectorAll('.menu');
     categories.forEach(category => {
         category.addEventListener('click', () => {
             if(!category.classList.contains('selected')) {
                 category.classList.add('selected');
+                idsArr.push(category.dataset.id);
             } else {
                 category.classList.remove('selected');
+                let index = idsArr.indexOf(category.dataset.id);
+                idsArr.splice(index, 1);
             }
+            // getIds.innerHTML = idsArr.join(',');
+            // getIds.dataset.id = "<?php $meaning = strval('" + idsArr.join(',') + "')?>";
+            // getIds.dataset.id = "<?php $meaning = '" + idsArr.join(',') + "'; ?>";
         })
     });
 }
@@ -55,7 +65,4 @@ if (window.matchMedia("(max-width: 600px)").matches) {
         ulNav.style.display = "none";
         closeBurger.style.display = "none";
     })
-} 
-
-// sider categories ___________________________________________________
-$('.slider').slick()
+}

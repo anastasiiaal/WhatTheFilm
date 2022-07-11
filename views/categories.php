@@ -1,11 +1,14 @@
 <?php
 include('templates/head.php');
+$meaning = "";
 ?>
 <body>
+<p id='getId' style='color: white'></p>
 <?php
     include('templates/header.php');
     include('templates/separator.php');
     $getGenres = $movieDB->getGenres();
+    
 ?>
 <?php
     $getGenres = $movieDB->getGenres();
@@ -18,12 +21,12 @@ include('templates/head.php');
         $genresToUrl = implode(",", $selectedGenres);
         // var_dump($genresToUrl);
     }
-$getFilmsByGenre = $movieDB->getFilmsByGenre($genresToUrl);
+    $getFilmsByGenre = $movieDB->getFilmsByGenre($genresToUrl);
 ?>
 <section class="categories-list" id="categories-list">
     <div class="container dflex">
         <?php foreach($getGenres as $genre) { ?>
-        <p class="menu" id="<?= $genre['id'] ?>"><?= $genre['name'] ?></p>
+        <p class="menu <?php if(isset($_GET['idgenre']) && $genre['id'] == $_GET['idgenre']) {echo "selected";} ?>" data-id="<?= $genre['id'] ?>" id="<?= $genre['id'] ?>"><?= $genre['name'] ?></p>
         <?php } ?>
     </div>
 </section>
