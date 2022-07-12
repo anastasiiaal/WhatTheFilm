@@ -15,8 +15,8 @@ class MovieDB {
     public function getSearchResult(string $searchInput, int $page = 1): ?array {
 
         $data = $this->callAPI("search/movie?{$this->API}&query={$searchInput}&page={$page}");
-        // var_dump($data);
-
+        // var_dump($data['total_pages']);
+        
         if ($data['results'] === []) {
             $results = null;
         } else {
@@ -26,13 +26,25 @@ class MovieDB {
                     'title' => $result['title'],
                     'poster_path' => 'https://image.tmdb.org/t/p/w500' . $result['poster_path'],
                     'year' => date_format(new DateTime($result['release_date'] ?? null),"Y"),
-                    'vote_average' => $result['vote_average']
+                    'vote_average' => $result['vote_average'],
                 ];
             }
+            $totalPages = ['total_pages' => $data['total_pages']];
         }
         
+        // return $totalPages;
         return $results;
-
+        
+    }
+    
+    public function getSearchPages(string $searchInput, int $page = 1) {
+        $data = $this->callAPI("search/movie?{$this->API}&query={$searchInput}&page={$page}");
+        $pages = [
+            'page' => $data['page'],
+            'total_pages' => $data['total_pages']
+    ];
+        var_dump($pages);
+        return $pages;
     }
 
     // function to get a movie by an ID get request
