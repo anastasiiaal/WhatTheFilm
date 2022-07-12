@@ -9,13 +9,14 @@ include('templates/head.php');
 <?php
     $searchQuery = "";
     $getSearchResult = [];
+    $getPage = 2;
     if(isset($_GET["search"])) {
         if ($_GET["search"] === "" || $_GET["search"] === "  " || $_GET["search"] === "   ") {
             echo "<h2 style='display: inline-block; margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"; 
         } else {
             $searchQuery = $_GET["search"];
             $searchQuery = $new = str_replace(' ', '%20', $searchQuery);   // replaces whitespace with %20 symbol to let it be inserted in a URL
-            $getSearchResult = $movieDB->getSearchResult($searchQuery);
+            $getSearchResult = $movieDB->getSearchResult($searchQuery, $getPage);
         }
     } else {
         echo "<h2 style='margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"; 
