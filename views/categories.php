@@ -5,7 +5,13 @@ $meaning = "";
 <body>
 <p id='getId' style='color: white'></p>
 <?php
+    // __________ ANA - TEST FOR FETCH ____________________________
+    // $data = json_decode(file_get_contents('php://input'), true);
+    // $genres = $_POST["genres"];
+    // echo $genres;
+
     include('templates/header.php');
+    $h2 = "Categories";
     include('templates/separator.php');
     $getGenres = $movieDB->getGenres();
     

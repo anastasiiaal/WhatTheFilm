@@ -2,6 +2,7 @@
     &> .container {
         justify-content: center;
         flex-wrap: wrap;
+        margin-bottom: 10px;
 
         &> .menu {
             margin: 5px;
@@ -11,7 +12,7 @@
 
 .films {
     flex-direction: column;
-    margin-top: 20px;
+    margin: 0px auto 20px;
     &>.container {
         flex-wrap: wrap;
         justify-content: space-between;

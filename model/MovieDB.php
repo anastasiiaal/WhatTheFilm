@@ -12,7 +12,7 @@ class MovieDB {
     }
 
     // function to get a list of movies according to search parameters
-    public function getSearchResult(string $searchInput, int $page): ?array {
+    public function getSearchResult(string $searchInput, int $page = 1): ?array {
 
         $data = $this->callAPI("search/movie?{$this->API}&query={$searchInput}&page={$page}");
         // var_dump($data);
@@ -133,6 +133,24 @@ class MovieDB {
         
         return $results;
     }
+
+    // function to get top rated films
+    public function getFilms (string $keyWord) {
+        $data = $this->callAPI("movie/{$keyWord}?{$this->API}&language=en-US&page=1");
+
+        foreach($data['results'] as $result) {
+            $results[] = [
+                'id' => $result['id'],
+                'title' => $result['title'],
+                'poster_path' => 'https://image.tmdb.org/t/p/w500' . $result['poster_path'],
+                'year' => date_format(new DateTime($result['release_date']),"Y"),
+                'vote_average' => $result['vote_average']
+            ];
+        }
+        
+        return $results;
+    }
+
 
     // function to get a list of actors of a concrete movie
     public function getActors (int $movieId) {

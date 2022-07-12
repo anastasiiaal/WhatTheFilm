@@ -37,6 +37,7 @@ include('templates/head.php');
 </section>
 <section id="cast-crew" class="cast-crew">
     <?php
+    $h2 = "Cast & Crew";
     include('templates/separator.php');
     ?>
     <div class="container dflex">
@@ -45,11 +46,13 @@ include('templates/head.php');
                 <?php 
                     for($i = 0; $i <= 3; $i++) { ?>
                         <div class="persona dflex">
-                            <img src="<?= $getActors[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './img/poster.png' :$getActors[$i]['profile_path'] ?>" alt="persona">
-                            <div class="persona__txt-wrapper">
-                                <h4><?= $getActors[$i]['name'] ?></h4>
-                                <p class="txt-sm"><?= $getActors[$i]['character'] ?></p>
-                            </div>
+                            <?php if ($getActors[$i] !== null) { ?>
+                                <img src="<?= $getActors[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './img/poster.png' :$getActors[$i]['profile_path'] ?>" alt="persona">
+                                <div class="persona__txt-wrapper">
+                                    <h4><?= $getActors[$i]['name'] ?></h4>
+                                    <p class="txt-sm"><?= $getActors[$i]['character'] ?></p>
+                                </div>
+                            <?php } else { echo "<div></div>"; } ?>
                         </div>
                     <?php } ?>
                
@@ -58,11 +61,13 @@ include('templates/head.php');
                 <?php 
                     for($i = 0; $i <= 3; $i++) { ?>
                         <div class="persona dflex">
-                            <img src="<?= $getCrew[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './img/poster.png' :$getCrew[$i]['profile_path'] ?>" alt="persona">
-                            <div class="persona__txt-wrapper">
-                                <h4><?= $getCrew[$i]['name'] ?></h4>
-                                <p class="txt-sm"><?= $getCrew[$i]['job'] ?></p>
-                            </div>
+                            <?php if ($getCrew[$i] !== null) { ?>
+                                <img src="<?= $getCrew[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './img/poster.png' :$getCrew[$i]['profile_path'] ?>" alt="persona">
+                                <div class="persona__txt-wrapper">
+                                    <h4><?= $getCrew[$i]['name'] ?></h4>
+                                    <p class="txt-sm"><?= $getCrew[$i]['job'] ?></p>
+                                </div>
+                            <?php } else { echo "<div></div>"; } ?>
                         </div>
                     <?php } ?>
             </div>

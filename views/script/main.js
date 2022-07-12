@@ -40,8 +40,25 @@ if (document.getElementById('categories-list')) {
                 idsArr.splice(index, 1);
             }
             // getIds.innerHTML = idsArr.join(',');
-            // getIds.dataset.id = "<?php $meaning = strval('" + idsArr.join(',') + "')?>";
-            // getIds.dataset.id = "<?php $meaning = '" + idsArr.join(',') + "'; ?>";
+
+            // __________ ANA - TEST FOR FETCH ____________________________
+            // const idsArrString = idsArr.join(',');
+            // const genres = {
+            //     genres: idsArrString,
+            // }
+            // fetch("./categories.php", {
+            //     method: 'POST',
+            //     body: JSON.stringify(genres),
+            //     headers: {
+            //         "Content-Type": "application/json; charset=UTF-8"
+            //     }
+            // })
+            // .then((response) => {
+            //     console.log(response);
+            //     return response.json();
+            // })
+            // .then((data) => console.log(data))
+            // __________ end of fetch test ____________________________
         })
     });
 }
