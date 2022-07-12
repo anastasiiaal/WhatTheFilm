@@ -45,7 +45,13 @@ $meaning = "";
             </a>
         <?php } ?>
     </div>
-    <button class="btn-primary">See more films</button>
+    <div class="btn-container">
+        <div class="btn-wrapper dflex">
+            <button class="btn-primary deactivated">< PREV</button>
+            <button class="btn-primary">NEXT ></button>
+        </div>
+    </div>
+    <!-- <button class="btn-primary">See more films</button> -->
 </section>
 
 
