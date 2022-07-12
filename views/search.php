@@ -10,21 +10,30 @@ include('templates/head.php');
 <?php
     $searchQuery = "";
     $getSearchResult = [];
-    $getPage = 1;
     if(isset($_GET["search"])) {
         if ($_GET["search"] === "" || $_GET["search"] === "  " || $_GET["search"] === "   ") {
             echo "<h2 style='display: inline-block; margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"; 
         } else {
             $searchQuery = $_GET["search"];
             $searchQuery = $new = str_replace(' ', '%20', $searchQuery);   // replaces whitespace with %20 symbol to let it be inserted in a URL
-            $getSearchResult = $movieDB->getSearchResult($searchQuery);
+            if(isset($_GET['page'])) {
+                $getSearchResult = $movieDB->getSearchResult($searchQuery, $_GET['page']);
+                $getSearchPages = $movieDB->getSearchPages($searchQuery,  $_GET['page']);
+            } else {
+                $getSearchResult = $movieDB->getSearchResult($searchQuery);
+                $getSearchPages = $movieDB->getSearchPages($searchQuery);
+            }
+            
         }
     } else {
         echo "<h2 style='margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"; 
     }
     
-    $getSearchPages = $movieDB->getSearchPages($searchQuery, $getPage);
-    // var_dump($getSearchResult[20]['total_pages']);
+    if (!isset($_GET['page'])) {
+        $actualPage = 1;
+    } else {
+        $actualPage = $_GET['page'];
+    }
 ?>
 <section class="films dflex">
     <div class="container dflex">
@@ -55,18 +64,19 @@ include('templates/head.php');
                     if($getSearchPages['page'] === 1) { ?>
                         <button class="btn-primary deactivated">< PREV</button>
                     <?php } else { ?>
-                        <button class="btn-primary">< PREV</button>
+                        <a href="search.php?search=<?= $searchQuery ?>&page=<?= intval($actualPage - 1) ?>"><button class="btn-primary">< PREV</button></a>
+                        
                     <?php }
                     if($getSearchPages['page'] === $getSearchPages['total_pages']) { ?>
                         <button class="btn-primary deactivated">NEXT ></button>
-                    <?php } else { ?>
-                        <button class="btn-primary">NEXT ></button>
-                     <?php } ?>
+                    <?php } else { 
+                        ?>
+                            <a href="search.php?search=<?= $searchQuery ?>&page=<?= intval($actualPage + 1) ?>"><button class="btn-primary">NEXT ></button></a>
+                        
+                      <?php } ?>
                 </div>
             </div>
     <?php } ?>
-    
-    <!-- <button class="btn-primary">See more films</button> -->
 </section>
 
 <?php
