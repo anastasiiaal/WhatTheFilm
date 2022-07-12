@@ -43,7 +43,7 @@ class MovieDB {
             'page' => $data['page'],
             'total_pages' => $data['total_pages']
     ];
-        var_dump($pages);
+        // var_dump($pages);
         return $pages;
     }
 

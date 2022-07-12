@@ -33,6 +33,12 @@ include('templates/head.php');
         $actualPage = 1;
     } else {
         $actualPage = $_GET['page'];
+
+        if($_GET['page'] > $getSearchPages['total_pages']) {
+            $getSearchResult = $movieDB->getSearchResult($searchQuery, 1);
+            $getSearchPages = $movieDB->getSearchPages($searchQuery, 1);
+            $actualPage = 1;
+        }
     }
 ?>
 <section class="films dflex">
