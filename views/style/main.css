@@ -684,6 +684,10 @@ footer .container .footer-copyright {
     transform: scale(1.3);
     margin-bottom: 10px;
   }
+  .films .container a.card-movie__link {
+    width: 80%;
+    margin: 20px auto;
+  }
 }
 .slider {
   width: 100%;
@@ -697,9 +701,13 @@ footer .container .footer-copyright {
 .img-div {
   position: relative;
 }
+.img-div:hover > img {
+  transform: scale(1.1);
+}
 .img-div img {
   filter: brightness(0.8);
   margin: 0 auto;
+  transition: all 0.2s ease-in-out;
 }
 .img-div h2 {
   position: absolute;

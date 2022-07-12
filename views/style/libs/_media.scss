@@ -251,6 +251,12 @@
             }
         }
     }
+
+    // container de films + card
+    .films .container a.card-movie__link {
+        width: 80%;
+        margin: 20px auto;
+    }
 }
 
 
