@@ -38,9 +38,9 @@
 </section>
 <!-- end NEW RELEASES SECTION -->
 
-<!-- __________ TOP100 SECTION __________ -->
+<!-- __________ TOP RATED SECTION __________ -->
 <?php
-    $h2 = "Top 100";
+    $h2 = "Top rated";
     include('templates/separator.php');
     
     $getFilms_topRated = $movieDB->getFilms("top_rated");

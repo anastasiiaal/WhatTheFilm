@@ -39,7 +39,7 @@ if (document.getElementById('categories-list')) {
                 let index = idsArr.indexOf(category.dataset.id);
                 idsArr.splice(index, 1);
             }
-            // getIds.innerHTML = idsArr.join(',');
+            getIds.innerHTML = idsArr.join(',');
 
             // __________ ANA - TEST FOR FETCH ____________________________
             // const idsArrString = idsArr.join(',');

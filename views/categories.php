@@ -7,8 +7,10 @@ $meaning = "";
 <?php
     // __________ ANA - TEST FOR FETCH ____________________________
     // $data = json_decode(file_get_contents('php://input'), true);
-    // $genres = $_POST["genres"];
-    // echo $genres;
+    // if(isset($_POST["genres"])) {
+    //     $genres = $_POST["genres"];
+    //     echo $genres;
+    // }
 
     include('templates/header.php');
     $h2 = "Categories";
