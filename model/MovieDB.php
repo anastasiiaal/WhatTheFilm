@@ -14,7 +14,7 @@ class MovieDB {
     // function to get a list of movies according to search parameters
     public function getSearchResult(string $searchInput): ?array {
 
-        $data = $this->callAPI("search/movie?{$this->API}&query={$searchInput}&page=1");
+        $data = $this->callAPI("search/movie?{$this->API}&query={$searchInput}&page=");
         // var_dump($data);
 
         if ($data['results'] === []) {

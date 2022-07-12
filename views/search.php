@@ -40,7 +40,13 @@ include('templates/head.php');
             <?= "<h2 style='margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"   ?>
         <?php } ?>
     </div>
-    <button class="btn-primary">See more films</button>
+    <div class="btn-container">
+        <div class="btn-wrapper dflex">
+            <button class="btn-primary deactivated">< PREV</button>
+            <button class="btn-primary">NEXT ></button>
+        </div>
+    </div>
+    <!-- <button class="btn-primary">See more films</button> -->
 </section>
 
 
