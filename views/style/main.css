@@ -157,6 +157,7 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
 .btn-container .btn-wrapper {
   justify-content: center;
   margin-top: 30px;
+  align-items: center;
 }
 .btn-container .btn-wrapper button {
   margin: 10px 20px;
@@ -525,11 +526,9 @@ footer .container .footer-copyright {
   .container {
     width: 850px;
   }
-
   #header nav {
     margin-left: -145px;
   }
-
   .film-main > .container {
     position: relative;
     align-items: start;
@@ -543,7 +542,6 @@ footer .container .footer-copyright {
     right: 10px;
     top: -20px;
   }
-
   .cast-crew > .container:nth-child(2) {
     flex-direction: column;
   }
@@ -566,23 +564,19 @@ footer .container .footer-copyright {
   .container {
     width: 700px;
   }
-
   #header nav {
     margin-left: -20px;
   }
   #header nav ul > li:nth-child(3) .nav__categories li.category-link {
     min-width: 160px;
   }
-
   a.card-movie__link {
     width: 22%;
   }
-
   .film-main > .container > img.poster-img {
     width: 35%;
     height: auto;
   }
-
   .iframe-wrapper iframe {
     width: 50%;
   }
@@ -592,14 +586,12 @@ footer .container .footer-copyright {
   .container {
     width: 540px;
   }
-
   #header nav a {
     padding: 10px 5px;
   }
   #header form input {
     max-width: 150px;
   }
-
   footer .container .footer-sections .footer-section1 img {
     width: 90px;
   }
@@ -609,11 +601,9 @@ footer .container .footer-copyright {
   footer .container .footer-sections .footer-section2 nav ul li {
     margin: 0 10px;
   }
-
   a.card-movie__link {
     width: 47%;
   }
-
   .film-main > .container {
     flex-direction: column-reverse;
   }
@@ -624,7 +614,6 @@ footer .container .footer-copyright {
   .film-main .film__info-wrapper {
     width: 100%;
   }
-
   .cast-crew .cast__wrapper, .cast-crew .crew__wrapper {
     flex-wrap: wrap;
   }
@@ -645,7 +634,6 @@ footer .container .footer-copyright {
   .container {
     width: 85%;
   }
-
   #header nav {
     margin: auto;
   }
@@ -680,7 +668,6 @@ footer .container .footer-copyright {
     top: 30px;
     right: 30px;
   }
-
   footer .container .footer-sections .footer-section2 nav ul {
     flex-direction: column;
     align-items: center;

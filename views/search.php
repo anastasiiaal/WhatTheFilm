@@ -65,15 +65,15 @@ include('templates/head.php');
                         <button class="btn-primary deactivated">< PREV</button>
                     <?php } else { ?>
                         <a href="search.php?search=<?= $searchQuery ?>&page=<?= intval($actualPage - 1) ?>"><button class="btn-primary">< PREV</button></a>
-                        
-                    <?php }
-                    if($getSearchPages['page'] === $getSearchPages['total_pages']) { ?>
+                    <?php } ?>
+
+                    <h4>Page <?= $actualPage ?> out of <?= $getSearchPages['total_pages'] ?></h4>
+
+                    <?php if($getSearchPages['page'] === $getSearchPages['total_pages']) { ?>
                         <button class="btn-primary deactivated">NEXT ></button>
-                    <?php } else { 
-                        ?>
-                            <a href="search.php?search=<?= $searchQuery ?>&page=<?= intval($actualPage + 1) ?>"><button class="btn-primary">NEXT ></button></a>
-                        
-                      <?php } ?>
+                    <?php } else { ?>
+                        <a href="search.php?search=<?= $searchQuery ?>&page=<?= intval($actualPage + 1) ?>"><button class="btn-primary">NEXT ></button></a>
+                    <?php } ?>
                 </div>
             </div>
     <?php } ?>
