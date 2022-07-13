@@ -118,7 +118,6 @@ class MovieDB {
     // function to get the list of all existing film genres 
     public function getGenres () {
         $data = $this->callAPI("genre/movie/list?{$this->API}&language=en-US");
-
         foreach($data['genres'] as $genre) {
             $results[] = [
                 'id' => $genre['id'],
@@ -130,8 +129,8 @@ class MovieDB {
     }
 
     // function to get list of films according to selected genres
-    public function getFilmsByGenre (string $genreIds) {
-        $data = $this->callAPI("discover/movie?sort_by=popularity.desc&{$this->API}&with_genres={$genreIds}");
+    public function getFilmsByGenre (string $genreIds, int $page = 1) {
+        $data = $this->callAPI("discover/movie?sort_by=popularity.desc&{$this->API}&with_genres={$genreIds}&page={$page}");
 
         foreach($data['results'] as $result) {
             $results[] = [
@@ -144,6 +143,16 @@ class MovieDB {
         }
         
         return $results;
+    }
+
+    public function getFilmsByGenrePages(string $genreIds, int $page = 1) {
+        $data = $this->callAPI("discover/movie?sort_by=popularity.desc&{$this->API}&with_genres={$genreIds}&page={$page}");
+        $pages = [
+            'page' => $data['page'],
+            'total_pages' => $data['total_pages']
+    ];
+        // var_dump($pages);
+        return $pages;
     }
 
     // function to get top rated films

@@ -29,7 +29,27 @@ $meaning = "";
         $genresToUrl = implode(",", $selectedGenres);
         // var_dump($genresToUrl);
     }
-    $getFilmsByGenre = $movieDB->getFilmsByGenre($genresToUrl);
+
+    if(isset($_GET['page'])) {
+        $getFilmsByGenre = $movieDB->getFilmsByGenre($genresToUrl, $_GET['page']);
+        $getFilmsByGenrePages = $movieDB->getFilmsByGenrePages($genresToUrl,  $_GET['page']);
+    } else {
+        $getFilmsByGenre = $movieDB->getFilmsByGenre($genresToUrl);
+        $getFilmsByGenrePages = $movieDB->getFilmsByGenrePages($genresToUrl);
+    }
+
+    $totalPage = $getFilmsByGenrePages['total_pages'] > 500 ? 500 : $getFilmsByGenrePages['total_pages'];
+    if (!isset($_GET['page'])) {
+        $actualPage = 1;
+    } else {
+        $actualPage = $_GET['page'];
+
+        if($_GET['page'] > $totalPage) {
+            $getFilmsByGenre = $movieDB->getFilmsByGenre($genresToUrl, 1);
+            $getFilmsByGenrePages = $movieDB->getFilmsByGenrePages($genresToUrl, 1);
+            $actualPage = 1;
+        }
+    }
 ?>
 <section class="categories-list" id="categories-list">
     <div class="container dflex">
@@ -53,16 +73,28 @@ $meaning = "";
             </a>
         <?php } ?>
     </div>
-    <div class="btn-container">
-        <div class="btn-wrapper dflex">
-            <button class="btn-primary deactivated">< PREV</button>
-            <button class="btn-primary">NEXT ></button>
-        </div>
-    </div>
-    <!-- <button class="btn-primary">See more films</button> -->
+    <?php
+    if($getFilmsByGenrePages['total_pages'] > 1) { ?>
+        <div class="btn-container">
+                <div class="btn-wrapper dflex">
+                    <?php
+                    if($getFilmsByGenrePages['page'] === 1) { ?>
+                        <button class="btn-primary deactivated">< PREV</button>
+                    <?php } else { ?>
+                        <a href="categories.php?idgenre=<?= $genresToUrl ?>&page=<?= intval($actualPage - 1) ?>"><button class="btn-primary">< PREV</button></a>
+                    <?php } ?>
+
+                    <h4>Page <?= $actualPage ?> out of <?= $totalPage ?></h4>
+
+                    <?php if($getFilmsByGenrePages['page'] === $totalPage) { ?>
+                        <button class="btn-primary deactivated">NEXT ></button>
+                    <?php } else { ?>
+                        <a href="categories.php?idgenre=<?= $genresToUrl ?>&page=<?= intval($actualPage + 1) ?>"><button class="btn-primary">NEXT ></button></a>
+                    <?php } ?>
+                </div>
+            </div>
+    <?php } ?>
 </section>
-
-
 
 <?php
     include('templates/footer.php');
