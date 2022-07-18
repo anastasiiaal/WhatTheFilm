@@ -70,19 +70,33 @@ class MovieDB {
         ];
 
         // format production countries
-        foreach($results['production_countries'] as $result) { 
-            $productions[] = "-" . $result['iso_3166_1'];
+        if($results['production_countries'] !== []) {
+            
+            foreach($results['production_countries'] as $result) { 
+                if($result === null) {
+                    $productions[] = "-";
+                } else {
+                    $productions[] = "-" . $result['iso_3166_1'];
+                }
+            }
+            foreach($productions as $countrie) {
+                $countries[] = Locale::getDisplayRegion($countrie, 'en');
+            }
+            $results['production_countries'] = implode(", ", $countries);
+        } else {
+            $results['production_countries'] = "-";
         }
-        foreach($productions as $countrie) {
-            $countries[] = Locale::getDisplayRegion($countrie, 'en');
-        }
-        $results['production_countries'] = implode(", ", $countries);
-
+        
+        
         // format genres
-        foreach($results['genres'] as $result) { 
-            $genres[] = $result['name'];
-        }  
-        $results['genres'] = implode(", ", $genres);
+        if($results['genres'] !== []) {
+            foreach($results['genres'] as $result) { 
+                $genres[] = $result['name'];
+            }  
+            $results['genres'] = implode(", ", $genres);
+        } else {
+            $results['genres'] = "-";
+        }
 
         // format budget
         if($results['budget'] >1000000000){
@@ -176,32 +190,36 @@ class MovieDB {
     // function to get a list of actors of a concrete movie
     public function getActors (int $movieId) {
         $data = $this->callAPI("movie/{$movieId}/credits?{$this->API}&language=en-US");
+        if($data['cast'] !== []) {
 
-        foreach($data['cast'] as $actor) {
-            $resultsAct[] = [
-                'name' => $actor['name'],
-                'character' => $actor['character'],
-                'profile_path' => 'https://image.tmdb.org/t/p/w500' . $actor['profile_path']
-            ];
+            foreach($data['cast'] as $actor) {
+                $resultsAct[] = [
+                    'name' => $actor['name'],
+                    'character' => $actor['character'],
+                    'profile_path' => 'https://image.tmdb.org/t/p/w500' . $actor['profile_path']
+                ];
+            }
+            // limit array length to 4 entries
+            return array_slice($resultsAct, 0, 4);
         }
-
-        return $resultsAct;
 
     }
 
     // function to get a list of crew members of a concrete movie
     public function getCrew (int $movieId) {
         $data = $this->callAPI("movie/{$movieId}/credits?{$this->API}&language=en-US");
-
-        foreach($data['crew'] as $crew) {
-            $resultsCr[] = [
-                'name' => $crew['name'],
-                'job' => $crew['job'],
-                'profile_path' => 'https://image.tmdb.org/t/p/w500' . $crew['profile_path'],
-            ];
+        if($data['crew'] !== []) {
+            
+            foreach($data['crew'] as $crew) {
+                $resultsCr[] = [
+                    'name' => $crew['name'],
+                    'job' => $crew['job'],
+                    'profile_path' => 'https://image.tmdb.org/t/p/w500' . $crew['profile_path'],
+                ];
+            }
+            // limit array length to 4 entries
+            return array_slice($resultsCr, 0, 4);
         }
-        
-        return $resultsCr;
 
     }
 
