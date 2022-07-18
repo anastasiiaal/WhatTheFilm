@@ -25,9 +25,7 @@ $meaning = "";
     
     if (isset($_GET['idgenre'])) {
         array_push($selectedGenres, $_GET['idgenre']);
-        // var_dump($selectedGenres);
         $genresToUrl = implode(",", $selectedGenres);
-        // var_dump($genresToUrl);
     }
 
     if(isset($_GET['page'])) {
@@ -54,8 +52,9 @@ $meaning = "";
 <section class="categories-list" id="categories-list">
     <div class="container dflex">
         <?php foreach($getGenres as $genre) { ?>
-        <p class="menu <?php if(isset($_GET['idgenre']) && $genre['id'] == $_GET['idgenre']) {echo "selected";} ?>" data-id="<?= $genre['id'] ?>" id="<?= $genre['id'] ?>"><?= $genre['name'] ?></p>
+            <p class="menu <?php if(isset($_GET['idgenre']) && $genre['id'] == $_GET['idgenre']) {echo "selected";} ?>" data-id="<?= $genre['id'] ?>" id="<?= $genre['id'] ?>"><?= $genre['name'] ?></p>
         <?php } ?>
+
     </div>
 </section>
 <section class="films dflex">

@@ -41,6 +41,7 @@ if (document.getElementById('categories-list')) {
             }
             getIds.innerHTML = idsArr.join(',');
 
+
             // __________ ANA - TEST FOR FETCH ____________________________
             // const idsArrString = idsArr.join(',');
             // const genres = {

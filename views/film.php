@@ -13,15 +13,17 @@ include('templates/head.php');
 ?>
 <section class="film-main">
     <div class="container dflex">
-        <img class="poster-img" src="<?=$getMovie['poster_path'] ?>" alt="Poster '<?= $getMovie['title'] ?>'">
+        <img class="poster-img" src="<?= $getMovie['poster_path'] === "https://image.tmdb.org/t/p/original/" ? 'img/poster.png' : $getMovie['poster_path'] ?>" alt="Poster '<?= $getMovie['title'] ?>'">
         <div class="film__info-wrapper">
             <h1><?= $getMovie['title'] ?></h1>
             <p class="txt-sm"><span class="infospan infospan-year"><?= $getMovie['year'] ?></span> | <span class="infospan infospan-runtime"><?= $getMovie['runtime'] ?></span> | <span class="infospan infospan-country"><?= $getMovie['production_countries'] ?></span></p>
             <div class="film__genres dflex">
                 <?php
+                if($getMovie['genres'] !== "-") {
                     foreach(explode(",", $getMovie['genres']) as $genre){
                         echo "<p class='menu selected'>$genre</p>";
                     }
+                }
                 ?>
             </div>
             <p class="txt-lg">
@@ -44,7 +46,8 @@ include('templates/head.php');
         <div class="cast-crew__wrapper">
             <div class="crew__wrapper dflex">
                 <?php 
-                    for($i = 0; $i <= 3; $i++) { ?>
+                if($getActors !== null) {
+                    for($i = 0; $i <= count($getActors)-1; $i++) { ?>
                         <div class="persona dflex">
                             <?php if ($getActors[$i] !== null) { ?>
                                 <img src="<?= $getActors[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './img/poster.png' :$getActors[$i]['profile_path'] ?>" alt="persona">
@@ -54,12 +57,14 @@ include('templates/head.php');
                                 </div>
                             <?php } else { echo "<div></div>"; } ?>
                         </div>
-                    <?php } ?>
+                    <?php } 
+                } ?>
                
             </div>
             <div class="cast__wrapper dflex">
                 <?php 
-                    for($i = 0; $i <= 3; $i++) { ?>
+                if($getCrew !== null) {
+                    for($i = 0; $i <= count($getCrew)-1 ; $i++) { ?>
                         <div class="persona dflex">
                             <?php if ($getCrew[$i] !== null) { ?>
                                 <img src="<?= $getCrew[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './img/poster.png' :$getCrew[$i]['profile_path'] ?>" alt="persona">
@@ -69,7 +74,8 @@ include('templates/head.php');
                                 </div>
                             <?php } else { echo "<div></div>"; } ?>
                         </div>
-                    <?php } ?>
+                    <?php } 
+                } ?>
             </div>
         </div>
         <div class="film-details">
@@ -93,13 +99,19 @@ include('templates/head.php');
                 <li>
                     <h4>Director</h4>
                     <?php
-                    for($i=0; $i<count($getCrew); $i++) {
-                        if($getCrew[$i]['job'] === 'Director') {
-                            $director = $getCrew[$i]['name'];
+                    if($getCrew !== null) {
+                        for($i=0; $i<count($getCrew); $i++) {
+                            if($getCrew[$i]['job'] === 'Director') {
+                                $director = $getCrew[$i]['name'];
+                            } else { 
+                                $director = "-";
+                            }
                         }
-                    }
                     ?>
-                    <p class="txt-reg"><?= $director ?></p>
+                        <p class="txt-reg"><?= $director ?></p>
+                    <?php } else { ?>
+                        <p class="txt-reg">-</p>
+                    <?php } ?>
                 </li>
                 <li>
                     <h4>Country of origin</h4>
