@@ -102,23 +102,32 @@ let totalPages = 100;
 
 let selectedGenre = [];
 
+let lastSegment = "";
+let lastSegmentId = "";
 
+// _________ function that checks if there is any genre id passed as $_GET _________
+checkUrl();
+function checkUrl () {
+    const windowLocation = window.location.href;
+    lastSegment = windowLocation.split(".").pop();
+    if(lastSegment === "php") { // if the url ends with just .php (== no $_GET passed)
+        // console.log("last segment equals to php => nothing to push");
+        getMovies(API_URL);
+    } else { // else if there is $_GET passed -> should send it to an array of genres as parameter to get movies
+        // console.log("last segment is other than 'php' => should push a genre");
+        lastSegmentId = parseInt(lastSegment.split("=").pop());
+        selectedGenre.push(lastSegmentId);
+        console.log(selectedGenre);
+        highlightSelection();
+        getMovies(API_URL + '&with_genres=' + selectedGenre);
+    }
+}
 
-// CODE TO GET THE ISSET GET
-// const windowLocation = window.location.href;
-// const lastSegment = parseInt(windowLocation.split("=").pop());
-// console.log(lastSegment);
-// if(lastSegment != NaN) {
-//     selectedGenre.push(parseInt(lastSegment));
-//     highlightSelection();
-// } else {
-//     selectedGenre = [];
-// }
 setGenre();
 //  _________ function that generates categories over the film cards and makes sure their ids are taken once category is clicked _________ 
 function setGenre () {
     categoriesList.innerHTML = '';
-
+    
     genres.forEach(genre => {
         const p = document.createElement('p');
         p.classList.add('menu');
@@ -213,7 +222,7 @@ function getMovies (url) {
     })
 }
 // calling previous function with general API link by default (no genres selected)
-getMovies(API_URL);
+// getMovies(API_URL);
 
 // _________ function that generates movie cards with img, title, year, note  _________ 
 function showMovies (data) {
