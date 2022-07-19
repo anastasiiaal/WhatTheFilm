@@ -106,7 +106,7 @@ let lastSegment = "";
 let lastSegmentId = "";
 
 // _________ function that checks if there is any genre id passed as $_GET _________
-checkUrl();
+
 function checkUrl () {
     const windowLocation = window.location.href;
     lastSegment = windowLocation.split(".").pop();
@@ -117,13 +117,22 @@ function checkUrl () {
         // console.log("last segment is other than 'php' => should push a genre");
         lastSegmentId = parseInt(lastSegment.split("=").pop());
         selectedGenre.push(lastSegmentId);
-        console.log(selectedGenre);
-        highlightSelection();
+        // console.log(selectedGenre);
+
+        const genresPi = document.querySelectorAll('p.menu');
+        // console.log(genresPi);
+        genresPi.forEach(tag => {
+            if(tag.id == selectedGenre) {
+                tag.classList.add('selected');
+            }
+        })
+
         getMovies(API_URL + '&with_genres=' + selectedGenre);
     }
 }
 
 setGenre();
+checkUrl();
 //  _________ function that generates categories over the film cards and makes sure their ids are taken once category is clicked _________ 
 function setGenre () {
     categoriesList.innerHTML = '';
