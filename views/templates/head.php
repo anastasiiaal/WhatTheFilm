@@ -26,5 +26,5 @@
         <link rel="icon" type="image/x-icon" href="./img/favicons/favicon-192.png" sizes="192x192">
         <link rel="icon" type="image/x-icon" href="./img/favicons/favicon-228.png" sizes="228x228">
     <!-- end favicons -->
-    <title>WTF | What The Film</title>
+    <title><?= $titlePage ?></title>
 </head>
