@@ -1,5 +1,4 @@
 <?php
-
 class MovieDB {
 
     private $apiKey;
@@ -34,7 +33,6 @@ class MovieDB {
         
         // return $totalPages;
         return $results;
-        
     }
     
     public function getSearchPages(string $searchInput, int $page = 1) {
@@ -86,7 +84,6 @@ class MovieDB {
         } else {
             $results['production_countries'] = "-";
         }
-        
         
         // format genres
         if($results['genres'] !== []) {
@@ -223,21 +220,13 @@ class MovieDB {
 
     }
 
-    // // pagination function
-    // public function getPage (string $url) {
-    //     $data = $this->callAPI("{$url}&page=");
-
-    //     return $data;
-    // }
-
-
     // ______________ méthodes privées - à la fin
     private function callAPI (string $endpoint): ?array {   // $endpoint - part of link that changes || function returns un tableau ou null
         $curl = curl_init("https://api.themoviedb.org/3/{$endpoint}");
         curl_setopt_array($curl, [
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_SSL_VERIFYPEER => false,                                                      // delete
-            // CURLOPT_CAINFO         => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'cert.cer',     // decomment
+            // CURLOPT_SSL_VERIFYPEER => false,                  // delete
+            CURLOPT_CAINFO         => __DIR__ . '/cert.cer',     // decomment
             CURLOPT_TIMEOUT        => 1
         ]);
         $data = curl_exec($curl);

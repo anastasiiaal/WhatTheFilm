@@ -1,5 +1,6 @@
 <?php
-include('templates/head.php');
+    $titlePage = 'WTF | Categories';
+    include('templates/head.php');
 ?>
 <body>
 
