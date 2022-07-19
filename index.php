@@ -1,3 +1,3 @@
 <?php
-    header('location: /WhatTheFilm/views/home.php');
+    header('location: ../WhatTheFilm/views/home.php');
 ?>
