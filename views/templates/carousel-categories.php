@@ -1,5 +1,5 @@
 <?php
-    $getGenres = $movieDB->getGenres();
+$getGenres = $movieDB->getGenres();
 ?>
 
 <div class="container">

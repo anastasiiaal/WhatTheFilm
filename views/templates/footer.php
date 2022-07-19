@@ -9,7 +9,7 @@
                 <nav class="nav-footer">
                     <ul>
                         <li><a href="./home.php">Home</a></li>
-                        <li><a href="./home.php#new-releases">New releases</a></li>
+                        <li><a href="./home.php#new_releases">New releases</a></li>
                         <li><a href="./categories.php">Categories</a></li>
                     </ul>
                 </nav> 

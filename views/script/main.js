@@ -20,7 +20,8 @@ function checkBtnWatch () {
 }
 checkBtnWatch();
 
-// responsive burger on mobile version _______________________________________
+
+// burger on mobile version _______________________________________
 const burger = document.getElementById("burger");
 const ulNav = document.getElementById("ul-nav");
 const closeBurger = document.getElementById('close-burger');

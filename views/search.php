@@ -1,25 +1,18 @@
 <?php
-    $titlePage = 'WTF | Search results';
-    include('templates/head.php');
+include('templates/head.php');
 ?>
 <body>
 <?php
     include('templates/header.php');
-    if(isset($_GET["search"])) {
-        $h2 = "Search results of : " . $_GET['search'];
-    } else {
-        $h2 = "Search results";
-    }
+    $h2 = "Search results of : " . $_GET['search'];
     include('templates/separator.php');
 ?>
 <?php
     $searchQuery = "";
     $getSearchResult = [];
     if(isset($_GET["search"])) {
-        if ($_GET["search"] === "" || $_GET["search"] === "  " || $_GET["search"] === "   " || $_GET["search"] === "    ") {
+        if ($_GET["search"] === "" || $_GET["search"] === "  " || $_GET["search"] === "   ") {
             echo "<h2 style='display: inline-block; margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"; 
-            include('templates/footer.php');
-            die();
         } else {
             $searchQuery = $_GET["search"];
             $searchQuery = $new = str_replace(' ', '%20', $searchQuery);   // replaces whitespace with %20 symbol to let it be inserted in a URL
@@ -33,9 +26,7 @@
             
         }
     } else {
-        echo "<div class='container dflex'><h2 style='margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2></div>"; 
-        include('templates/footer.php');
-        die();
+        echo "<h2 style='margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"; 
     }
     
     if (!isset($_GET['page'])) {
