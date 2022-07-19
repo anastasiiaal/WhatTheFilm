@@ -1,6 +1,5 @@
 <?php
-    $titlePage = 'WTF | The Film';
-    include('templates/head.php');
+include('templates/head.php');
 ?>
 <body>
 <?php

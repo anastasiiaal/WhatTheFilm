@@ -1,5 +1,5 @@
 //  _________ API connection  _________ 
-const API_KEY = 'api_key=f85a64b77f4c446aae94f46335f1fe8e';
+const API_KEY = '***';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
@@ -111,11 +111,22 @@ function checkUrl () {
     const windowLocation = window.location.href;
     lastSegment = windowLocation.split(".").pop();
     if(lastSegment === "php") { // if the url ends with just .php (== no $_GET passed)
+        // console.log("last segment equals to php => nothing to push");
         getMovies(API_URL);
     } else { // else if there is $_GET passed -> should send it to an array of genres as parameter to get movies
+        // console.log("last segment is other than 'php' => should push a genre");
         lastSegmentId = parseInt(lastSegment.split("=").pop());
         selectedGenre.push(lastSegmentId);
-        highlightSelection();
+        // console.log(selectedGenre);
+
+        const genresPi = document.querySelectorAll('p.menu');
+        // console.log(genresPi);
+        genresPi.forEach(tag => {
+            if(tag.id == selectedGenre) {
+                tag.classList.add('selected');
+            }
+        })
+
         getMovies(API_URL + '&with_genres=' + selectedGenre);
     }
 }
@@ -133,6 +144,7 @@ function setGenre () {
         p.innerText = genre.name;
         p.addEventListener('click', () => {
             if(selectedGenre.length == 0) {
+                // p.classList.add('selected');
                 selectedGenre.push(genre.id);
             } else {
                 if(selectedGenre.includes(genre.id)) {
@@ -159,6 +171,7 @@ function highlightSelection () {
     genresP.forEach(tag => {
         tag.classList.remove('selected');
     })
+    // console.log(genresP);
     if(selectedGenre.length != 0) {
         selectedGenre.forEach(id => {
             genresP.forEach(tag => {
@@ -184,7 +197,7 @@ function getMovies (url) {
             nextPage = currentPage + 1;
             prevPage = currentPage - 1;
             totalPages = data.total_pages;
-            if(totalPages > 500) { // we won't show more than 500 pages 
+            if(totalPages > 500) {
                 totalPagesSpan.innerHTML = 500;
             } else {
                 totalPagesSpan.innerHTML = totalPages;
@@ -192,7 +205,7 @@ function getMovies (url) {
 
             currentPageSpan.innerHTML = currentPage;
 
-            if (totalPages <= 1) { // if the whole category query result makes less thann 2 pages, we dont show the pagination menu
+            if (totalPages <= 1) {
                 btnWrapper.style.display = "none";
             } else {
                 btnWrapper.style.display = "flex";
@@ -217,6 +230,8 @@ function getMovies (url) {
         console.log(err);
     })
 }
+// calling previous function with general API link by default (no genres selected)
+// getMovies(API_URL);
 
 // _________ function that generates movie cards with img, title, year, note  _________ 
 function showMovies (data) {
