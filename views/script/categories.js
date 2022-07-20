@@ -221,7 +221,7 @@ function getMovies (url) {
                 }
             }
 
-            categoriesList.scrollIntoView({behavior : 'smooth'});
+            // categoriesList.scrollIntoView({behavior : 'smooth'});
         } else {
             main.innerHTML = `<h1 class="no-results">Sorry, no results found</h1>`;
         }

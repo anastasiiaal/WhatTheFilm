@@ -1,6 +1,29 @@
 .film-main {
     padding: 50px 0;
 
+    &>.img-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0,0,0,.6);
+        z-index: 10000;
+        overflow: hidden;
+
+        &:hover {
+            cursor: zoom-out;
+        }
+
+        #poster-xl {
+            height: 85%;
+            margin-left: 50%;
+            margin-top: 30px;
+            transform: translate(-50%, 0);
+            z-index: 10000;
+        }
+    }
+
     &>.container {
         align-items: center;
         justify-content: space-between;
@@ -9,11 +32,14 @@
             border-radius: 2px;
             width: 300px;
             height: 450px;
+
+            &:hover {
+                cursor: zoom-in;
+            }
         }
     }
 
     .film__info-wrapper {
-        // margin-left: 70px;
         width: 630px;
 
         h1 {
@@ -41,7 +67,7 @@
 
         button {
             margin-top: 50px;
-            z-index: 1;
+            z-index: -1;
 
             &> img {
                 transform: translateY(2px);

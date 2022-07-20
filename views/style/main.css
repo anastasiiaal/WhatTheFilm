@@ -443,6 +443,26 @@ footer .container .footer-copyright {
 .film-main {
   padding: 50px 0;
 }
+.film-main > .img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  overflow: hidden;
+}
+.film-main > .img-overlay:hover {
+  cursor: zoom-out;
+}
+.film-main > .img-overlay #poster-xl {
+  height: 85%;
+  margin-left: 50%;
+  margin-top: 30px;
+  transform: translate(-50%, 0);
+  z-index: 10000;
+}
 .film-main > .container {
   align-items: center;
   justify-content: space-between;
@@ -451,6 +471,9 @@ footer .container .footer-copyright {
   border-radius: 2px;
   width: 300px;
   height: 450px;
+}
+.film-main > .container > img:hover {
+  cursor: zoom-in;
 }
 .film-main .film__info-wrapper {
   width: 630px;
@@ -475,7 +498,7 @@ footer .container .footer-copyright {
 }
 .film-main .film__info-wrapper button {
   margin-top: 50px;
-  z-index: 1;
+  z-index: -1;
 }
 .film-main .film__info-wrapper button > img {
   transform: translateY(2px);
@@ -691,6 +714,10 @@ footer .container .footer-copyright {
   .films .container a.card-movie__link {
     width: 80%;
     margin: 20px auto;
+  }
+  .film-main .img-overlay #poster-xl {
+    width: 90%;
+    height: auto;
   }
 }
 .slider {
