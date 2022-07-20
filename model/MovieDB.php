@@ -15,7 +15,6 @@ class MovieDB {
     public function getSearchResult(string $searchInput, int $page = 1): ?array {
 
         $data = $this->callAPI("search/movie?{$this->API}&query={$searchInput}&page={$page}");
-        // var_dump($data['total_pages']);
         
         if ($data['results'] === []) {
             $results = null;
@@ -32,9 +31,7 @@ class MovieDB {
             $totalPages = ['total_pages' => $data['total_pages']];
         }
         
-        // return $totalPages;
         return $results;
-        
     }
     
     public function getSearchPages(string $searchInput, int $page = 1) {
@@ -42,7 +39,7 @@ class MovieDB {
         $pages = [
             'page' => $data['page'],
             'total_pages' => $data['total_pages']
-    ];
+        ];
         // var_dump($pages);
         return $pages;
     }
@@ -64,7 +61,9 @@ class MovieDB {
             'overview' => $data['overview'],
             'videos' => 'https://www.youtube.com/embed/' . ($data['videos']['results']? $data['videos']['results'][0]['key']: null),
             'original_title' => $data['original_title'],
-            'original_language' => Locale::getDisplayLanguage($data['original_language'] , 'en'),
+            // 'original_language' => locale_get_display_language($data['original_language'] , 'en'),
+            // 'original_language' => Locale::getDisplayLanguage($data['original_language'] , 'en'),
+            'original_language' => $data['original_language'],
             'budget' => $data['budget'],
             'revenue' => $data['revenue']
         ];
@@ -80,13 +79,14 @@ class MovieDB {
                 }
             }
             foreach($productions as $countrie) {
-                $countries[] = Locale::getDisplayRegion($countrie, 'en');
+                // $countries[] = Locale::getDisplayRegion($countrie, 'en');
+                // $countries[] = $countrie;
+                $countries[] = str_replace('-', '', $countrie);
             }
             $results['production_countries'] = implode(", ", $countries);
         } else {
             $results['production_countries'] = "-";
         }
-        
         
         // format genres
         if($results['genres'] !== []) {
@@ -164,7 +164,7 @@ class MovieDB {
         $pages = [
             'page' => $data['page'],
             'total_pages' => $data['total_pages']
-    ];
+        ];
         // var_dump($pages);
         return $pages;
     }
@@ -223,14 +223,6 @@ class MovieDB {
 
     }
 
-    // // pagination function
-    // public function getPage (string $url) {
-    //     $data = $this->callAPI("{$url}&page=");
-
-    //     return $data;
-    // }
-
-
     // ______________ méthodes privées - à la fin
     private function callAPI (string $endpoint): ?array {   // $endpoint - part of link that changes || function returns un tableau ou null
         $curl = curl_init("https://api.themoviedb.org/3/{$endpoint}");
@@ -246,5 +238,4 @@ class MovieDB {
         }
         return json_decode($data, true);   // true pour avoir un tableau associatif
     }
-
 }
