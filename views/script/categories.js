@@ -1,5 +1,5 @@
 //  _________ API connection  _________ 
-const API_KEY = 'api_key=f85a64b77f4c446aae94f46335f1fe8e';
+const API_KEY = '***';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
@@ -236,13 +236,13 @@ function showMovies (data) {
         movieEl.setAttribute("href", "./film.php?id=" + id);
         movieEl.innerHTML = `
             <div class="card-movie">
-                    <img src="${poster_path? IMG_URL+poster_path: "./img/poster.png" }" alt="${title}">
-                    <div class="card-info">
-                        <h4>${title}</h4>
-                        <p class="txt-sm">${cutDate(release_date)}</p>
-                        <h4 class="${getColor(vote_average)}">${vote_average}</h4>
-                    </div>
+                <img src="${poster_path? IMG_URL+poster_path: "./img/poster.png" }" alt="${title}">
+                <div class="card-info">
+                    <h4>${title}</h4>
+                    <p class="txt-sm">${cutDate(release_date)}</p>
+                    <h4 class="${getColor(vote_average)}">${vote_average}</h4>
                 </div>
+            </div>
         `;
 
         moviesContainer.appendChild(movieEl);
@@ -263,6 +263,9 @@ function getColor (vote) {
 // _________ function "cutting" date to get only year  _________ 
 function cutDate (date) {
     let year = new Date(date).getFullYear();
+    if(isNaN(year)) {
+        year = " -";
+    }
     return year;
 }
 
