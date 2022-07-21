@@ -5,6 +5,10 @@
     .nav-wrapper {
         align-items: center;
         justify-content: space-between;
+
+        &>a {
+            display: flex;
+        }
     }
 
     nav {

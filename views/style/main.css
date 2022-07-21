@@ -275,6 +275,9 @@ footer .container .footer-copyright {
   align-items: center;
   justify-content: space-between;
 }
+#header .nav-wrapper > a {
+  display: flex;
+}
 #header nav {
   margin-left: -350px;
 }
