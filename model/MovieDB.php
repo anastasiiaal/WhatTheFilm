@@ -199,8 +199,8 @@ class MovieDB {
                     'profile_path' => 'https://image.tmdb.org/t/p/w500' . $actor['profile_path']
                 ];
             }
-            // limit array length to 4 entries
-            return array_slice($resultsAct, 0, 4);
+            
+            return $resultsAct;
         }
 
     }
@@ -217,8 +217,8 @@ class MovieDB {
                     'profile_path' => 'https://image.tmdb.org/t/p/w500' . $crew['profile_path'],
                 ];
             }
-            // limit array length to 4 entries
-            return array_slice($resultsCr, 0, 4);
+            
+            return $resultsCr;
         }
 
     }
