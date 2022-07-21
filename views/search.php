@@ -1,19 +1,25 @@
 <?php
-    $titlePage = 'Search';
+    $titlePage = 'Search results';
     include('templates/head.php');
 ?>
 <body>
 <?php
     include('templates/header.php');
-    $h2 = "Search results of : " . $_GET['search'];
+    if(isset($_GET["search"])) {
+        $h2 = "Search results of : " . $_GET['search'];
+    } else {
+        $h2 = "Search results";
+    }
     include('templates/separator.php');
 ?>
 <?php
     $searchQuery = "";
     $getSearchResult = [];
     if(isset($_GET["search"])) {
-        if ($_GET["search"] === "" || $_GET["search"] === "  " || $_GET["search"] === "   ") {
-            echo "<h2 style='display: inline-block; margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"; 
+        if ($_GET["search"] === "" || $_GET["search"] === "  " || $_GET["search"] === "   " || $_GET["search"] === "    ") {
+            echo "<div class='container dflex'><h2 style='display: inline-block; margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2></div>"; 
+            include('templates/footer.php');
+            die();
         } else {
             $searchQuery = $_GET["search"];
             $searchQuery = $new = str_replace(' ', '%20', $searchQuery);   // replaces whitespace with %20 symbol to let it be inserted in a URL
@@ -24,10 +30,11 @@
                 $getSearchResult = $movieDB->getSearchResult($searchQuery);
                 $getSearchPages = $movieDB->getSearchPages($searchQuery);
             }
-            
         }
     } else {
-        echo "<h2 style='margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"; 
+        echo "<div class='container dflex'><h2 style='margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2></div>"; 
+        include('templates/footer.php');
+        die();
     }
     
     if (!isset($_GET['page'])) {
