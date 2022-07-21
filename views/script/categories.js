@@ -216,14 +216,14 @@ function getMovies (url) {
 
             categoriesList.scrollIntoView({behavior : 'smooth'});
         } else {
-            moviesContainer.innerHTML = `<h1 class="no-results">Sorry, no results found</h1>`;
+            moviesContainer.innerHTML = `<div class='container dflex'><h2 style='display: inline-block; margin-left: 50%; transform: translateX(-50%); margin-top: 50px'> Sorry no results found </h2></div>"`;
+            btnWrapper.style.display = "none";
         }
     })
     .catch(err => {
         console.log(err);
     })
 }
-
 
 // _________ function that generates movie cards with img, title, year, note  _________ 
 function showMovies (data) {
