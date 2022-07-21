@@ -202,7 +202,6 @@ class MovieDB {
             
             return $resultsAct;
         }
-
     }
 
     // function to get a list of crew members of a concrete movie
@@ -220,7 +219,6 @@ class MovieDB {
             
             return $resultsCr;
         }
-
     }
 
     // ______________ méthodes privées - à la fin
