@@ -55,7 +55,7 @@ class MovieDB {
             'vote_average' => $data['vote_average'],
             'full_date' => date_format(new DateTime($data['release_date']), "d M Y"),
             'year' => date_format(new DateTime($data['release_date']), "Y"),
-            'runtime' => date("G\h i\m", $data['runtime']*60),
+            'runtime' => intdiv($data['runtime'], 60).'h '. ($data['runtime'] % 60). 'm',
             'production_countries' => $data['production_countries'],
             'genres' => $data['genres'],
             'overview' => $data['overview'],
@@ -202,6 +202,7 @@ class MovieDB {
             
             return $resultsAct;
         }
+
     }
 
     // function to get a list of crew members of a concrete movie
@@ -219,6 +220,7 @@ class MovieDB {
             
             return $resultsCr;
         }
+
     }
 
     // ______________ méthodes privées - à la fin
