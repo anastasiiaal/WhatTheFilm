@@ -1,5 +1,6 @@
 <?php
-include('templates/head.php');
+    $titlePage = 'Search';
+    include('templates/head.php');
 ?>
 <body>
 <?php

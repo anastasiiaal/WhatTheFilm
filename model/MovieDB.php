@@ -228,8 +228,8 @@ class MovieDB {
         $curl = curl_init("https://api.themoviedb.org/3/{$endpoint}");
         curl_setopt_array($curl, [
             CURLOPT_RETURNTRANSFER => true,
-            // CURLOPT_SSL_VERIFYPEER => false,                  // delete
-            CURLOPT_CAINFO         => __DIR__ . '/cert.cer',     // decomment
+            CURLOPT_SSL_VERIFYPEER => false,                  // delete
+            // CURLOPT_CAINFO         => __DIR__ . '/cert.cer',     // decomment
             CURLOPT_TIMEOUT        => 1
         ]);
         $data = curl_exec($curl);

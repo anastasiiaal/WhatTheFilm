@@ -134,7 +134,6 @@ h1, h2, h3, h4, .txt-lg, .txt-reg, .menu {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   position: relative;
-  z-index: 1000;
 }
 .btn-primary:hover {
   transform: translate(2px, 2px);
@@ -444,7 +443,7 @@ footer .container .footer-copyright {
   padding: 50px 0;
 }
 .film-main > .img-overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
@@ -498,7 +497,6 @@ footer .container .footer-copyright {
 }
 .film-main .film__info-wrapper button {
   margin-top: 50px;
-  z-index: -1;
 }
 .film-main .film__info-wrapper button > img {
   transform: translateY(2px);
