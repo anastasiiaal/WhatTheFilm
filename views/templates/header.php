@@ -1,6 +1,6 @@
 <?php
-$getGenres = $movieDB->getGenres();
-$columnSize = intdiv(sizeof($getGenres), 2) + 1;
+    $getGenres = $movieDB->getGenres();
+    $columnSize = intdiv(sizeof($getGenres), 2) + 1;
 ?>
 <header class="header" id="header">
     <div class="container">

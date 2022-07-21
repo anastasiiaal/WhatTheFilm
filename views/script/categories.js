@@ -111,16 +111,12 @@ function checkUrl () {
     const windowLocation = window.location.href;
     lastSegment = windowLocation.split(".").pop();
     if(lastSegment === "php") { // if the url ends with just .php (== no $_GET passed)
-        // console.log("last segment equals to php => nothing to push");
         getMovies(API_URL);
     } else { // else if there is $_GET passed -> should send it to an array of genres as parameter to get movies
-        // console.log("last segment is other than 'php' => should push a genre");
         lastSegmentId = parseInt(lastSegment.split("=").pop());
         selectedGenre.push(lastSegmentId);
-        // console.log(selectedGenre);
 
         const genresPi = document.querySelectorAll('p.menu');
-        // console.log(genresPi);
         genresPi.forEach(tag => {
             if(tag.id == selectedGenre) {
                 tag.classList.add('selected');
@@ -144,7 +140,6 @@ function setGenre () {
         p.innerText = genre.name;
         p.addEventListener('click', () => {
             if(selectedGenre.length == 0) {
-                // p.classList.add('selected');
                 selectedGenre.push(genre.id);
             } else {
                 if(selectedGenre.includes(genre.id)) {
@@ -171,7 +166,7 @@ function highlightSelection () {
     genresP.forEach(tag => {
         tag.classList.remove('selected');
     })
-    // console.log(genresP);
+    
     if(selectedGenre.length != 0) {
         selectedGenre.forEach(id => {
             genresP.forEach(tag => {
@@ -189,9 +184,7 @@ function getMovies (url) {
     fetch(url)
     .then(res=> res.json())
     .then(data => {
-        // console.log(data);
         if(data.results.length !== 0) {
-            // console.log(data.results);
             showMovies(data.results);
             currentPage = data.page;  // parameter we get from console > network > fetch > headers > preview
             nextPage = currentPage + 1;
@@ -221,7 +214,7 @@ function getMovies (url) {
                 }
             }
 
-            // categoriesList.scrollIntoView({behavior : 'smooth'});
+            categoriesList.scrollIntoView({behavior : 'smooth'});
         } else {
             main.innerHTML = `<h1 class="no-results">Sorry, no results found</h1>`;
         }
@@ -230,15 +223,13 @@ function getMovies (url) {
         console.log(err);
     })
 }
-// calling previous function with general API link by default (no genres selected)
-// getMovies(API_URL);
+
 
 // _________ function that generates movie cards with img, title, year, note  _________ 
 function showMovies (data) {
     moviesContainer.innerHTML = "";
 
     data.forEach(movie => {
-        // console.log(movie);
         const {title, poster_path, vote_average, release_date, id} = movie; // == "object destructuring"
         const movieEl = document.createElement('a');
         movieEl.classList.add('card-movie__link');

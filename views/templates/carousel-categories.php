@@ -1,7 +1,6 @@
 <?php
-$getGenres = $movieDB->getGenres();
+    $getGenres = $movieDB->getGenres();
 ?>
-
 <div class="container">
     <div class="slider">
         <?php for ($i = 0; $i < 19; $i++) { ?>
