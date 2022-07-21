@@ -51,7 +51,7 @@
             <div class="crew__wrapper dflex">
                 <?php 
                 if($getActors !== null) {
-                    for($i = 0; $i <= count($getActors)-1; $i++) { ?>
+                    for($i = 0; $i <= count(array_slice($getActors, 0, 4))-1; $i++) { ?>
                         <div class="persona dflex">
                             <?php if ($getActors[$i] !== null) { ?>
                                 <img src="<?= $getActors[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './img/poster.png' :$getActors[$i]['profile_path'] ?>" alt="persona">
@@ -68,9 +68,9 @@
             <div class="cast__wrapper dflex">
                 <?php 
                 if($getCrew !== null) {
-                    for($i = 0; $i <= count($getCrew)-1 ; $i++) { ?>
-                        <div class="persona dflex">
+                    for($i = 0; $i <= count(array_slice($getCrew, 0, 4))-1 ; $i++) { ?>
                             <?php if ($getCrew[$i] !== null) { ?>
+                        <div class="persona dflex">
                                 <img src="<?= $getCrew[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './img/poster.png' :$getCrew[$i]['profile_path'] ?>" alt="persona">
                                 <div class="persona__txt-wrapper">
                                     <h4><?= $getCrew[$i]['name'] ?></h4>
@@ -104,11 +104,10 @@
                     <h4>Director</h4>
                     <?php
                     if($getCrew !== null) {
+                        $director = "-";
                         for($i=0; $i<count($getCrew); $i++) {
-                            if($getCrew[$i]['job'] === 'Director') {
+                            if($getCrew[$i]['job'] == 'Director') {
                                 $director = $getCrew[$i]['name'];
-                            } else { 
-                                $director = "-";
                             }
                         }
                     ?>
