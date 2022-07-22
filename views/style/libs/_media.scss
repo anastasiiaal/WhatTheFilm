@@ -12,6 +12,10 @@
         }
     }
 
+    .card-movie img {
+        height: 220px;
+    }
+
     // page categories
 
 
@@ -96,6 +100,10 @@
         }
         
     }
+
+    .card-movie img {
+        height: 220px;
+    }
 }
 // ____________________________________________________________________
 /*600-768*/
@@ -138,6 +146,10 @@
     // card-movie
     a.card-movie__link {
         width: 47%;
+    }
+
+    .card-movie img {
+        height: 380px;
     }
 
     // filmpage
@@ -254,13 +266,17 @@
 
     // container de films + card
     .films .container a.card-movie__link {
-        width: 80%;
+        width: 90%;
         margin: 20px auto;
     }
 
     // page film
     .film-main .img-overlay #poster-xl {
         width: 90%;
+        height: auto;
+    }
+
+    .card-movie img {
         height: auto;
     }
 }
