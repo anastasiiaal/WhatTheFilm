@@ -25,7 +25,7 @@ class MovieDB {
                     'title' => $result['title'],
                     'poster_path' => 'https://image.tmdb.org/t/p/w500' . $result['poster_path'],
                     'year' => date_format(new DateTime($result['release_date'] ?? null),"Y"),
-                    'vote_average' => $result['vote_average'],
+                    'vote_average' => round($result['vote_average'], 1),
                 ];
             }
             $totalPages = ['total_pages' => $data['total_pages']];
@@ -52,7 +52,7 @@ class MovieDB {
             'id' => $data['id'],
             'poster_path' => 'https://image.tmdb.org/t/p/original/' . $data['poster_path'],
             'title' => $data['title'],
-            'vote_average' => $data['vote_average'],
+            'vote_average' => round($data['vote_average'], 1),
             'full_date' => date_format(new DateTime($data['release_date']), "d M Y"),
             'year' => date_format(new DateTime($data['release_date']), "Y"),
             'runtime' => intdiv($data['runtime'], 60) . 'h ' . ($data['runtime'] % 60) . 'm',
@@ -152,7 +152,7 @@ class MovieDB {
                 'title' => $result['title'],
                 'poster_path' => 'https://image.tmdb.org/t/p/w500' . $result['poster_path'],
                 'year' => date_format(new DateTime($result['release_date']),"Y"),
-                'vote_average' => $result['vote_average']
+                'vote_average' => round($result['vote_average'], 1)
             ];
         }
         
@@ -179,7 +179,7 @@ class MovieDB {
                 'title' => $result['title'],
                 'poster_path' => 'https://image.tmdb.org/t/p/w500' . $result['poster_path'],
                 'year' => date_format(new DateTime($result['release_date']),"Y"),
-                'vote_average' => $result['vote_average']
+                'vote_average' => round($result['vote_average'], 1)
             ];
         }
         
