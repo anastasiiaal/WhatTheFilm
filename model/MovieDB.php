@@ -52,7 +52,7 @@ class MovieDB {
             'id' => $data['id'],
             'poster_path' => 'https://image.tmdb.org/t/p/original/' . $data['poster_path'],
             'title' => $data['title'],
-            'vote_average' => $data['vote_average'],
+            'vote_average' => round($data['vote_average'], 1),
             'full_date' => date_format(new DateTime($data['release_date']), "d M Y"),
             'year' => date_format(new DateTime($data['release_date']), "Y"),
             'runtime' => intdiv($data['runtime'], 60) . 'h ' . ($data['runtime'] % 60) . 'm',
