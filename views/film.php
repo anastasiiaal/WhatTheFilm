@@ -14,7 +14,7 @@
 ?>
 <section class="film-main">
     <div class="img-overlay dnone" id="img-overlay">
-        <img id="poster-xl" class="zoomed" src="<?= $getMovie['poster_path'] === "https://image.tmdb.org/t/p/original/" ? 'img/poster.png' : $getMovie['poster_path'] ?>">
+        <img id="poster-xl" class="zoomed" src="<?= $getMovie['poster_path'] === "https://image.tmdb.org/t/p/original/" ? 'img/poster2.png' : $getMovie['poster_path'] ?>">
     </div>
     <div class="container dflex">
         <img class="poster-img" id="poster-img" src="<?= $getMovie['poster_path'] === "https://image.tmdb.org/t/p/original/" ? 'img/poster.png' : $getMovie['poster_path'] ?>" alt="Poster '<?= $getMovie['title'] ?>'">
