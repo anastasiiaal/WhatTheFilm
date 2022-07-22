@@ -24,11 +24,19 @@ class MovieDB {
                     'id' => $result['id'],
                     'title' => $result['title'],
                     'poster_path' => 'https://image.tmdb.org/t/p/w500' . $result['poster_path'],
-                    'year' => date_format(new DateTime($result['release_date'] ?? null),"Y"),
+                    'year' => $result['release_date'] ?? null ,
                     'vote_average' => round($result['vote_average'], 1),
                 ];
             }
-            $totalPages = ['total_pages' => $data['total_pages']];
+        }
+        
+        for($i=0; $i < count($results); $i++) {
+
+            if($results[$i]['year'] !== "" && $results[$i]['year'] !== null) {
+                $results[$i]['year'] = date_format(new DateTime($results[$i]['year']), "Y");
+            } else {
+                $results[$i]['year'] = "-";
+            }
         }
         
         return $results;
@@ -40,7 +48,6 @@ class MovieDB {
             'page' => $data['page'],
             'total_pages' => $data['total_pages']
         ];
-        // var_dump($pages);
         return $pages;
     }
 
@@ -53,8 +60,8 @@ class MovieDB {
             'poster_path' => 'https://image.tmdb.org/t/p/original/' . $data['poster_path'],
             'title' => $data['title'],
             'vote_average' => round($data['vote_average'], 1),
-            'full_date' => date_format(new DateTime($data['release_date']), "d M Y"),
-            'year' => date_format(new DateTime($data['release_date']), "Y"),
+            'full_date' => $data['release_date'],
+            'year' => $data['release_date'],
             'runtime' => intdiv($data['runtime'], 60) . 'h ' . ($data['runtime'] % 60) . 'm',
             'production_countries' => $data['production_countries'],
             'genres' => $data['genres'],
@@ -67,6 +74,19 @@ class MovieDB {
             'budget' => $data['budget'],
             'revenue' => $data['revenue']
         ];
+        
+        // format full release date
+        if($results['full_date'] !== "") {
+            $results['full_date'] = date_format(new DateTime($results['full_date']), "d M Y");
+        } else {
+            $results['full_date'] = "-";
+        }
+        // format year release date
+        if($results['year'] !== "") {
+            $results['year'] = date_format(new DateTime($results['year']), "Y");
+        } else {
+            $results['year'] = "-";
+        }
 
         // format production countries
         if($results['production_countries'] !== []) {
@@ -125,7 +145,6 @@ class MovieDB {
         else if($results['revenue']===0) {
             $results['revenue'] = "-";  
         }
-        // var_dump($results);
         return $results;
     }
 
@@ -142,33 +161,6 @@ class MovieDB {
         return $results;
     }
 
-    // function to get list of films according to selected genres
-    public function getFilmsByGenre (string $genreIds, int $page = 1) {
-        $data = $this->callAPI("discover/movie?sort_by=popularity.desc&{$this->API}&with_genres={$genreIds}&page={$page}");
-
-        foreach($data['results'] as $result) {
-            $results[] = [
-                'id' => $result['id'],
-                'title' => $result['title'],
-                'poster_path' => 'https://image.tmdb.org/t/p/w500' . $result['poster_path'],
-                'year' => date_format(new DateTime($result['release_date']),"Y"),
-                'vote_average' => round($result['vote_average'], 1)
-            ];
-        }
-        
-        return $results;
-    }
-
-    public function getFilmsByGenrePages(string $genreIds, int $page = 1) {
-        $data = $this->callAPI("discover/movie?sort_by=popularity.desc&{$this->API}&with_genres={$genreIds}&page={$page}");
-        $pages = [
-            'page' => $data['page'],
-            'total_pages' => $data['total_pages']
-        ];
-        // var_dump($pages);
-        return $pages;
-    }
-
     // function to get top rated films
     public function getFilms (string $keyWord) {
         $data = $this->callAPI("movie/{$keyWord}?{$this->API}&language=en-US&page=1");
@@ -178,14 +170,23 @@ class MovieDB {
                 'id' => $result['id'],
                 'title' => $result['title'],
                 'poster_path' => 'https://image.tmdb.org/t/p/w500' . $result['poster_path'],
-                'year' => date_format(new DateTime($result['release_date']),"Y"),
+                'year' => $result['release_date'] ?? null,
                 'vote_average' => round($result['vote_average'], 1)
             ];
         }
         
+        // format year release date
+        for($i=0; $i < count($results); $i++) {
+
+            if($results[$i]['year'] !== "" && $results[$i]['year'] !== null) {
+                $results[$i]['year'] = date_format(new DateTime($results[$i]['year']), "Y");
+            } else {
+                $results[$i]['year'] = "-";
+            }
+        }
+
         return $results;
     }
-
 
     // function to get a list of actors of a concrete movie
     public function getActors (int $movieId) {
@@ -228,8 +229,8 @@ class MovieDB {
         $curl = curl_init("https://api.themoviedb.org/3/{$endpoint}");
         curl_setopt_array($curl, [
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_SSL_VERIFYPEER => false,                  // delete
-            // CURLOPT_CAINFO         => __DIR__ . '/cert.cer',     // decomment
+            // CURLOPT_SSL_VERIFYPEER => false,                  // delete
+            CURLOPT_CAINFO         => __DIR__ . '/cert.cer',     // decomment
             CURLOPT_TIMEOUT        => 1
         ]);
         $data = curl_exec($curl);
