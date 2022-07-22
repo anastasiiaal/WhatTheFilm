@@ -1,5 +1,6 @@
 // overlay + video trailer _________________________________________________
 // the function checks if there is an overlay present on the page, if yes, make it possible to close it by clicking on a X or on the overlay
+// const body = document.querySelector('body');
 function checkBtnWatch () {
     if (document.getElementById('btn-watch')) {
         const watchTrailerBtn = document.getElementById('btn-watch');
@@ -9,11 +10,14 @@ function checkBtnWatch () {
                 overlayTrailer = document.getElementById('overlay');
 
             overlayTrailer.classList.remove('dnone');
+            body.style.overflow = 'hidden';
             closeTrailer.addEventListener('click', () => {
                 overlayTrailer.classList.add('dnone');
+                body.style.overflow = 'auto';
             })
             overlayTrailer.addEventListener('click', () => {
                 overlayTrailer.classList.add('dnone');
+                body.style.overflow = 'auto';
             })
         })
     }
