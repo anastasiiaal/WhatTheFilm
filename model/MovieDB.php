@@ -30,12 +30,18 @@ class MovieDB {
             }
         }
         
-        for($i=0; $i < count($results); $i++) {
-
-            if($results[$i]['year'] !== "" && $results[$i]['year'] !== null) {
-                $results[$i]['year'] = date_format(new DateTime($results[$i]['year']), "Y");
-            } else {
-                $results[$i]['year'] = "-";
+        if ($results) {
+            for($i=0; $i < count($results); $i++) {
+    
+                if($results[$i]['year'] !== "" && $results[$i]['year'] !== null) {
+                    $results[$i]['year'] = date_format(new DateTime($results[$i]['year']), "Y");
+                } else {
+                    $results[$i]['year'] = "-";
+                }
+                
+                if($results[$i]['vote_average'] == 0) {
+                    $results[$i]['vote_average'] = "-";
+                }
             }
         }
         
@@ -86,6 +92,12 @@ class MovieDB {
             $results['year'] = date_format(new DateTime($results['year']), "Y");
         } else {
             $results['year'] = "-";
+        }
+
+        // format average note
+        
+        if($results['vote_average'] == 0) {
+            $results['vote_average'] = "-";
         }
 
         // format production countries
@@ -176,12 +188,18 @@ class MovieDB {
         }
         
         // format year release date
-        for($i=0; $i < count($results); $i++) {
+        if ($results) {
+            for($i=0; $i < count($results); $i++) {
 
-            if($results[$i]['year'] !== "" && $results[$i]['year'] !== null) {
-                $results[$i]['year'] = date_format(new DateTime($results[$i]['year']), "Y");
-            } else {
-                $results[$i]['year'] = "-";
+                if($results[$i]['year'] !== "" && $results[$i]['year'] !== null) {
+                    $results[$i]['year'] = date_format(new DateTime($results[$i]['year']), "Y");
+                } else {
+                    $results[$i]['year'] = "-";
+                }
+
+                if($results[$i]['vote_average'] == 0) {
+                    $results[$i]['vote_average'] = "-";
+                }
             }
         }
 

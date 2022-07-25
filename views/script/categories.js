@@ -240,7 +240,7 @@ function showMovies (data) {
                 <div class="card-info">
                     <h4>${title}</h4>
                     <p class="txt-sm">${cutDate(release_date)}</p>
-                    <h4 class="${getColor(vote_average)}">${vote_average}</h4>
+                    <h4 class="${getColor(vote_average)}">${fixNote(vote_average)}</h4>
                 </div>
             </div>
         `;
@@ -261,6 +261,16 @@ function getColor (vote) {
         return 'red';
     }
 }
+
+// function setting "-" as vote if the vote is === 0
+function fixNote (note) {
+    if (note != 0) {
+        return note;
+    } else {
+        return "-";
+    }
+}
+
 
 // _________ function "cutting" date to get only year  _________ 
 function cutDate (date) {
