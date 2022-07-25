@@ -255,6 +255,8 @@ function getColor (vote) {
         return 'green';
     } else if (vote >= 5) {
         return 'orange';
+    } else if (vote == 0) {
+        return '';
     } else {
         return 'red';
     }

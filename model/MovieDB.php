@@ -69,8 +69,8 @@ class MovieDB {
             'videos' => 'https://www.youtube.com/embed/' . ($data['videos']['results']? $data['videos']['results'][0]['key']: null),
             'original_title' => $data['original_title'],
             // 'original_language' => locale_get_display_language($data['original_language'] , 'en'),
-            // 'original_language' => Locale::getDisplayLanguage($data['original_language'] , 'en'),
-            'original_language' => $data['original_language'],
+            'original_language' => Locale::getDisplayLanguage($data['original_language'] , 'en'),
+            // 'original_language' => $data['original_language'],
             'budget' => $data['budget'],
             'revenue' => $data['revenue']
         ];
@@ -99,9 +99,9 @@ class MovieDB {
                 }
             }
             foreach($productions as $countrie) {
-                // $countries[] = Locale::getDisplayRegion($countrie, 'en');
+                $countries[] = Locale::getDisplayRegion($countrie, 'en');
                 // $countries[] = $countrie;
-                $countries[] = str_replace('-', '', $countrie);
+                // $countries[] = str_replace('-', '', $countrie);
             }
             $results['production_countries'] = implode(", ", $countries);
         } else {

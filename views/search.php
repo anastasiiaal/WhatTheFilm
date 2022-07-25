@@ -60,7 +60,7 @@
                         <div class="card-info">
                             <h4><?= $film['title'] ?></h4>
                             <p class="txt-sm"><?= $film['year'] ?></p>
-                            <h4 class="<?php if ($film['vote_average'] >= 7) { echo "green";} else if ($film['vote_average'] < 8 && $film['vote_average'] >= 5) {echo "orange";} else { echo "red";} ?>"><?= $film['vote_average'] ?></h4>
+                            <h4 class="<?php if ($film['vote_average'] >= 7) { echo "green";} else if ($film['vote_average'] < 8 && $film['vote_average'] >= 5) {echo "orange";}  else if ($film['vote_average'] == 0) {echo "";} else { echo "red";} ?>"><?= $film['vote_average'] ?></h4>
                         </div>
                     </div>
                 </a>
