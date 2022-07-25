@@ -5,19 +5,26 @@ function checkBtnWatch () {
     if (document.getElementById('btn-watch')) {
         const watchTrailerBtn = document.getElementById('btn-watch');
 
+        const trailer = document.getElementById('ytvideo')
+        const trailerSrc = trailer.src;
+
         watchTrailerBtn.addEventListener('click', () => {
             const closeTrailer = document.getElementById('btn_close-modal'),
                 overlayTrailer = document.getElementById('overlay');
+                trailer.src = trailerSrc;
 
             overlayTrailer.classList.remove('dnone');
             body.style.overflow = 'hidden';
+
             closeTrailer.addEventListener('click', () => {
                 overlayTrailer.classList.add('dnone');
                 body.style.overflow = 'auto';
+                trailer.src = "";
             })
             overlayTrailer.addEventListener('click', () => {
                 overlayTrailer.classList.add('dnone');
                 body.style.overflow = 'auto';
+                trailer.src = "";
             })
         })
     }
