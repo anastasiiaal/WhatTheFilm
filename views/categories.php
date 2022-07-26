@@ -67,6 +67,7 @@ if(!empty($_GET)) {
 <?php
     include('templates/footer.php');
 ?>
+    <script src="script/main.js"></script>
     <script src="script/categories.js"></script>
 </body>
 </html>
