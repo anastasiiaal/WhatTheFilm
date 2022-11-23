@@ -266,6 +266,14 @@ footer .container .footer-sections .footer-section3 img:hover {
 footer .container .footer-copyright {
   text-align: center;
 }
+footer .container .footer-copyright a {
+  color: #FFFFFF;
+  transition: all 0.2s ease-in-out;
+}
+footer .container .footer-copyright a:hover {
+  transition: all 0.2s ease-in-out;
+  color: #F0345C;
+}
 
 #header {
   background-color: #3C3E4D;

@@ -5,16 +5,16 @@
 <header class="header" id="header">
     <div class="container">
         <div class="nav-wrapper dflex">
-            <a href="./home.php">
-                <img src="./img/logo.svg" alt="Logo">
+            <a href="./">
+                <img src="views/img/logo.svg" alt="Logo">
             </a>
             <nav>
                 <ul class="dflex" id="ul-nav">
                     <li>
-                        <a href="./home.php">Home</a>
+                        <a href="./">Home</a>
                     </li>
                     <li>
-                        <a href="./home.php#new-releases">New releases</a>
+                        <a href="./index.php#new-releases">New releases</a>
                     </li>
                     <li>
                         <a href="./categories.php">Categories</a>

@@ -9,9 +9,10 @@ function checkBtnWatch () {
         const trailerSrc = trailer.src;
 
         watchTrailerBtn.addEventListener('click', () => {
-            const closeTrailer = document.getElementById('btn_close-modal'),
-                overlayTrailer = document.getElementById('overlay');
-                trailer.src = trailerSrc;
+            const closeTrailer = document.getElementById('btn_close-modal');
+            const overlayTrailer = document.getElementById('overlay');
+            
+            trailer.src = trailerSrc;
 
             overlayTrailer.classList.remove('dnone');
             body.style.overflow = 'hidden';

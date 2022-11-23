@@ -1,13 +1,13 @@
 <?php
     $titlePage = 'Categories';
-    include('templates/head.php');
+    include('views/templates/head.php');
 ?>
 <body>
 
 <?php
-    include('templates/header.php');
+    include('views/templates/header.php');
     $h2 = "Categories";
-    include('templates/separator.php');
+    include('views/templates/separator.php');
 ?>
 <section class="categories-list" id="categories-list">
     <div class="container dflex" id="cat-container">
@@ -39,12 +39,12 @@ if(!empty($_GET)) {
             && $_GET['idgenre'] != 37
         ) {
             echo "<h2 style='display: inline-block; margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"; 
-            include('templates/footer.php');
+            include('views/templates/footer.php');
             die();
         }
     } else {
         echo "<h2 style='display: inline-block; margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2>"; 
-        include('templates/footer.php');
+        include('views/templates/footer.php');
         die();
     }
 }
@@ -65,9 +65,9 @@ if(!empty($_GET)) {
 </section>
 
 <?php
-    include('templates/footer.php');
+    include('views/templates/footer.php');
 ?>
-    <script src="script/main.js"></script>
-    <script src="script/categories.js"></script>
+    <script src="views/script/main.js"></script>
+    <script src="views/script/categories.js"></script>
 </body>
 </html>

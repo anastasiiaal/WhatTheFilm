@@ -1,6 +1,6 @@
 <?php
     $titlePage = 'The Film';
-    include('templates/head.php');
+    include('views/templates/head.php');
 ?>
 <body>
 <?php
@@ -9,15 +9,15 @@
         $getCrew = $movieDB->getCrew(intval($_GET["id"]));
         $getActors = $movieDB->getActors(intval($_GET["id"]));
     }
-    include('templates/header.php');
-    include('templates/trailer-overlay.php');
+    include('views/templates/header.php');
+    include('views/templates/trailer-overlay.php');
 ?>
 <section class="film-main">
     <div class="img-overlay dnone" id="img-overlay">
-        <img id="poster-xl" class="zoomed" src="<?= $getMovie['poster_path'] === "https://image.tmdb.org/t/p/original/" ? 'img/poster2.png' : $getMovie['poster_path'] ?>">
+        <img id="poster-xl" class="zoomed" src="<?= $getMovie['poster_path'] === "https://image.tmdb.org/t/p/original/" ? 'views/img/poster2.png' : $getMovie['poster_path'] ?>">
     </div>
     <div class="container dflex">
-        <img class="poster-img" id="poster-img" src="<?= $getMovie['poster_path'] === "https://image.tmdb.org/t/p/original/" ? 'img/poster.png' : $getMovie['poster_path'] ?>" alt="Poster '<?= $getMovie['title'] ?>'">
+        <img class="poster-img" id="poster-img" src="<?= $getMovie['poster_path'] === "https://image.tmdb.org/t/p/original/" ? 'views/img/poster.png' : $getMovie['poster_path'] ?>" alt="Poster '<?= $getMovie['title'] ?>'">
         <div class="film__info-wrapper">
             <h1><?= $getMovie['title'] ?></h1>
             <p class="txt-sm"><span class="infospan infospan-year"><?= $getMovie['year'] ?></span> | <span class="infospan infospan-runtime"><?= $getMovie['runtime'] ?></span> | <span class="infospan infospan-country"><?= $getMovie['production_countries'] ?></span></p>
@@ -33,10 +33,10 @@
             <p class="txt-lg">
                 <?= $getMovie['overview'] ?>
             </p>
-            <button id="btn-watch" class="btn-primary"> <img src="img/triangle.svg" alt="Watch"> Watch trailer</button>
+            <button id="btn-watch" class="btn-primary"> <img src="views/img/triangle.svg" alt="Watch"> Watch trailer</button>
         </div>
         <div class="film__rating dflex">
-            <img src="img/star.svg" alt="Star">
+            <img src="views/img/star.svg" alt="Star">
             <p class="rating"><span><?= $getMovie['vote_average'] ?></span> / 10</p>
         </div>
     </div>
@@ -44,7 +44,7 @@
 <section id="cast-crew" class="cast-crew">
     <?php
     $h2 = "Cast & Crew";
-    include('templates/separator.php');
+    include('views/templates/separator.php');
     ?>
     <div class="container dflex">
         <div class="cast-crew__wrapper">
@@ -54,7 +54,7 @@
                     for($i = 0; $i <= count(array_slice($getActors, 0, 4))-1; $i++) { ?>
                         <div class="persona dflex">
                             <?php if ($getActors[$i] !== null) { ?>
-                                <img src="<?= $getActors[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './img/poster.png' :$getActors[$i]['profile_path'] ?>" alt="persona">
+                                <img src="<?= $getActors[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './views/img/poster.png' :$getActors[$i]['profile_path'] ?>" alt="persona">
                                 <div class="persona__txt-wrapper">
                                     <h4><?= $getActors[$i]['name'] ?></h4>
                                     <p class="txt-sm"><?= $getActors[$i]['character'] ?></p>
@@ -71,7 +71,7 @@
                     for($i = 0; $i <= count(array_slice($getCrew,0 , 4))-1 ; $i++) { ?>
                         <div class="persona dflex">
                             <?php if ($getCrew[$i] !== null) { ?>
-                                <img src="<?= $getCrew[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './img/poster.png' :$getCrew[$i]['profile_path'] ?>" alt="persona">
+                                <img src="<?= $getCrew[$i]['profile_path'] === "https://image.tmdb.org/t/p/w500" ? './views/img/poster.png' :$getCrew[$i]['profile_path'] ?>" alt="persona">
                                 <div class="persona__txt-wrapper">
                                     <h4><?= $getCrew[$i]['name'] ?></h4>
                                     <p class="txt-sm"><?= $getCrew[$i]['job'] ?></p>
@@ -140,9 +140,9 @@
 
 
 <?php
-    include('templates/footer.php');
+    include('views/templates/footer.php');
 ?>
-    <script src="script/main.js"></script>
-    <script src="script/poster.js"></script>
+    <script src="views/script/main.js"></script>
+    <script src="views/script/poster.js"></script>
 </body>
 </html>

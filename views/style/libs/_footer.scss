@@ -1,59 +1,80 @@
 footer {
     background-color: $light-blue;
+
     .container {
         margin-top: 100px;
         font-family: Poppins;
         font-weight: 300;
         color: $white;
         padding: 50px 20px 20px 20px;
+
         .footer-sections {
             display: flex;
+
             .footer-section1 {
                 width: 20%;
+
                 img {
                     width: 128px;
                     height: auto;
-                }              
+                }
             }
+
             .footer-section2 {
                 width: 60%;
+
                 nav {
                     ul {
                         display: flex;
                         justify-content: center;
+
                         li {
                             margin: 0 20px;
+
                             a {
                                 text-decoration: none;
                                 color: $white;
                                 transition: $transition;
-                                &:hover{
-                                transition: $transition;
-                                color: $pink;
+
+                                &:hover {
+                                    transition: $transition;
+                                    color: $pink;
+                                }
                             }
-                            }
-                            
                         }
                     }
-                    
                 }
             }
+
             .footer-section3 {
                 width: 20%;
                 display: flex;
                 justify-content: space-around;
-                img{
+
+                img {
                     transition: $transition;
+
                     &:hover {
-                    transform: scale(1.2);
-                    transition: $transition;
+                        transform: scale(1.2);
+                        transition: $transition;
                     }
                 }
-                
+
             }
         }
+
         .footer-copyright {
             text-align: center;
+
+            a {
+                color: $white;
+                transition: $transition;
+
+                &:hover {
+                    transition: $transition;
+                    color: $pink;
+                }
+            }
         }
     }
 }

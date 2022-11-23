@@ -1,16 +1,16 @@
 <?php
     $titlePage = 'Search results';
-    include('templates/head.php');
+    include('views/templates/head.php');
 ?>
 <body>
 <?php
-    include('templates/header.php');
+    include('views/templates/header.php');
     if(isset($_GET["search"])) {
         $h2 = "Search results of : " . $_GET['search'];
     } else {
         $h2 = "Search results";
     }
-    include('templates/separator.php');
+    include('views/templates/separator.php');
 ?>
 <?php
     $searchQuery = "";
@@ -18,7 +18,7 @@
     if(isset($_GET["search"])) {
         if ($_GET["search"] === "" || $_GET["search"] === "  " || $_GET["search"] === "   " || $_GET["search"] === "    ") {
             echo "<div class='container dflex'><h2 style='display: inline-block; margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2></div>"; 
-            include('templates/footer.php');
+            include('views/templates/footer.php');
             die();
         } else {
             $searchQuery = $_GET["search"];
@@ -33,7 +33,7 @@
         }
     } else {
         echo "<div class='container dflex'><h2 style='margin-left: 50%; transform: translateX(-50%)'> Sorry no results found </h2></div>"; 
-        include('templates/footer.php');
+        include('views/templates/footer.php');
         die();
     }
     
@@ -56,7 +56,7 @@
 
                 <a href="./film.php?id=<?= $film['id'] ?>" class="card-movie__link">
                     <div class="card-movie">
-                        <img src="<?= $film['poster_path'] === "https://image.tmdb.org/t/p/w500" ? 'img/poster.png' : $film['poster_path'];?>" alt="<?= $film['title'] ?>">
+                        <img src="<?= $film['poster_path'] === "https://image.tmdb.org/t/p/w500" ? 'views/img/poster.png' : $film['poster_path'];?>" alt="<?= $film['title'] ?>">
                         <div class="card-info">
                             <h4><?= $film['title'] ?></h4>
                             <p class="txt-sm"><?= $film['year'] ?></p>
@@ -94,7 +94,7 @@
 </section>
 
 <?php
-    include('templates/footer.php');
+    include('views/templates/footer.php');
 ?>
     <script src="script/main.js"></script>
 </body>
