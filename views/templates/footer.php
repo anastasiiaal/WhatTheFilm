@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer-sections">
             <div class="footer-section1">
-                <a href="/"><img src="views/img/logo.svg" alt="logo"></a>
+                <a href="./"><img src="views/img/logo.svg" alt="logo"></a>
             </div>
 
             <div class="footer-section2">
