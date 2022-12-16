@@ -59,6 +59,11 @@ h1 {
   font-size: 2.9rem;
   font-weight: 700;
 }
+h1.special {
+  display: none;
+  color: #282A38;
+  font-size: 0.1rem;
+}
 
 h2 {
   font-size: 1.7em;

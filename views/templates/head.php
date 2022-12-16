@@ -29,5 +29,7 @@
         <link rel="icon" type="image/x-icon" href="./views/img/favicons/favicon-192.png" sizes="192x192">
         <link rel="icon" type="image/x-icon" href="./views/img/favicons/favicon-228.png" sizes="228x228">
     <!-- end favicons -->
+    <meta name="title" content="WTF | WhatTheFilm">
+    <meta name="description" content="Looking for a film to watch? Find new releases, all time classics and all categories of movies right here!">
     <title>WTF | <?= $titlePage ?></title>
 </head>

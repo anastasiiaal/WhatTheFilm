@@ -6,6 +6,7 @@
 <?php
     include('views/templates/header.php');
 ?>
+<h1 class="special">Looking for a film to watch? Find new releases, all time classics and all categories of movies right here!</h1>
 <!-- __________ CATEGORIES CAROUSEL __________ -->
 <?php
     $h2 = "Categories";

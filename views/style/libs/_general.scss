@@ -28,6 +28,12 @@ body {
 h1 {
     font-size: 2.9rem;
     font-weight: 700;
+
+    &.special {
+        display: none;
+        color: $dark-blue;
+        font-size: .1rem;
+    }
 }
 
 h2 {
